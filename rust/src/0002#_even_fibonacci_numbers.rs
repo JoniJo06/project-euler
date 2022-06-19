@@ -1,5 +1,3 @@
-use core::num;
-
 pub fn start() {
   println!("0002# even_fibonacci_numbers");
 
