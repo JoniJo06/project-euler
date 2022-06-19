@@ -9,6 +9,7 @@ use std::env;
 #[path = "0004#_largest_palindrome_product.rs"] mod largest_palindrome_product;
 #[path = "0005#_smallest_multiple.rs"] mod smallest_multiple;
 #[path = "0006#_sum_square_difference.rs"] mod sum_square_difference;
+#[path = "0007#_10001st_prime.rs"] mod _10001st_prime;
 
 struct Gap {
     amount: i16,
@@ -49,6 +50,7 @@ fn main() {
         4 => largest_palindrome_product::start(),
         5 => smallest_multiple::start(),
         6 => sum_square_difference::start(),
+        7 => _10001st_prime::start(),
         _ => ()
     }
     gap.default();
