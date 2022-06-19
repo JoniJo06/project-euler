@@ -1,0 +1,1 @@
+/home/jonijo06/programming/jonijo06/project-euler/rust/target/debug/rust: /home/jonijo06/programming/jonijo06/project-euler/rust/src/main.rs /home/jonijo06/programming/jonijo06/project-euler/rust/src/multiples_of_3_or_5.rs
