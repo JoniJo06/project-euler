@@ -1,7 +1,7 @@
 use core::num;
 
 pub fn start() {
-  println!("even_fibonacci_numbers");
+  println!("0002# even_fibonacci_numbers");
 
   let mut result: i32 = 0;
   let mut numbers: Vec<i32> = Vec::new();

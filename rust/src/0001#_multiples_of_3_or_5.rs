@@ -1,5 +1,5 @@
 pub fn start() {
-  println!("multiples_of_3_or_5");
+  println!("0001# multiples_of_3_or_5");
 
   let mut result = 0;
   let mut numbers: Vec<i32> = Vec::new();
