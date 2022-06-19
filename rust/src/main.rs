@@ -4,6 +4,7 @@
 #[path = "0002#_even_fibonacci_numbers.rs"] mod even_fibonacci_numbers;
 #[path = "0003#_largest_prime_factor.rs"] mod largest_prime_factor;
 #[path = "0004#_largest_palindrome_product.rs"] mod largest_palindrome_product;
+#[path = "0005#_smallest_multiple.rs"] mod smallest_multiple;
 
 struct Gap {
     amount: i16,
@@ -43,5 +44,7 @@ fn main() {
     largest_prime_factor::start();
     gap.default();
     largest_palindrome_product::start();
+    gap.default();
+    smallest_multiple::start();
     gap.default();
 }
