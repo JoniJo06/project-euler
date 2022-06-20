@@ -1,4 +1,4 @@
-fn isPrime(k: u64) -> bool{
+fn is_prime(k: u64) -> bool{
   if k <= 1 {
     return false;
   }
@@ -33,7 +33,7 @@ pub fn start() {
   let mut n = 10001;
   let mut i = 2;
   while n > 0 {
-    if isPrime(i) {
+    if is_prime(i) {
       n -= 1;
     }
 
