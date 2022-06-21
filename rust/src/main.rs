@@ -11,6 +11,7 @@ use std::env;
 #[path = "0006#_sum_square_difference.rs"] mod sum_square_difference;
 #[path = "0007#_10001st_prime.rs"] mod _10001st_prime;
 #[path = "0008#_largest_product_in_a_series.rs"] mod largest_product_in_a_series;
+#[path = "0009#_special_pythagorean_triplet.rs"] mod special_pythagorean_triplet;
 
 struct Gap {
     amount: i16,
@@ -53,6 +54,7 @@ fn main() {
         6 => sum_square_difference::start(),
         7 => _10001st_prime::start(),
         8 => largest_product_in_a_series::start(),
+        9 => special_pythagorean_triplet::start(),
         _ => ()
     }
     gap.default();
