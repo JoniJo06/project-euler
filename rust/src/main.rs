@@ -13,9 +13,9 @@ use std::env;
 #[path = "1-10/0008#_largest_product_in_a_series.rs"] mod largest_product_in_a_series;
 #[path = "1-10/0009#_special_pythagorean_triplet.rs"] mod special_pythagorean_triplet;
 #[path = "1-10/0010#_summation_of_primes.rs"] mod summation_of_primes;
-#[path = "0011#_largest_product_in_a_grid.rs"] mod largest_product_in_a_grid;
-#[path = "0012#_highly_divisible_triangular_number.rs"] mod highly_divisible_triangular_number;
-#[path = "0013#_large_sum.rs"] mod large_sum;
+#[path = "11-20/0011#_largest_product_in_a_grid.rs"] mod largest_product_in_a_grid;
+#[path = "11-20/0012#_highly_divisible_triangular_number.rs"] mod highly_divisible_triangular_number;
+#[path = "11-20/0013#_large_sum.rs"] mod large_sum;
 
 struct Gap {
     amount: i16,
