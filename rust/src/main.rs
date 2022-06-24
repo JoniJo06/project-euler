@@ -13,6 +13,7 @@ use std::env;
 #[path = "0008#_largest_product_in_a_series.rs"] mod largest_product_in_a_series;
 #[path = "0009#_special_pythagorean_triplet.rs"] mod special_pythagorean_triplet;
 #[path = "0010#_summation_of_primes.rs"] mod summation_of_primes;
+#[path = "0011#_largest_product_in_a_grid.rs"] mod largest_product_in_a_grid;
 
 struct Gap {
     amount: i16,
@@ -47,6 +48,10 @@ fn main() {
     let mut gap: Gap = Gap::new(None, None);
     gap.default();
     match args[1].parse::<i32>().expect("you must provide a number") {
+        0 => {
+            // #[path ="test.rs"] mod test;
+            // test::start();
+        }
         1 => multiples_of_3_or_5::start(),
         2 => even_fibonacci_numbers::start(),
         3 => largest_prime_factor::start(),
@@ -57,7 +62,9 @@ fn main() {
         8 => largest_product_in_a_series::start(),
         9 => special_pythagorean_triplet::start(),
         10 => summation_of_primes::start(),
+        11 => largest_product_in_a_grid::start(),
         _ => ()
     }
     gap.default();
 }
+// mod test;
