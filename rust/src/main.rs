@@ -19,6 +19,7 @@ use std::env;
 #[path = "11-20/0013#_large_sum.rs"] mod large_sum;
 #[path = "11-20/0014#_longest_collatz_sequence.rs"] mod longest_collatz_sequence;
 #[path = "11-20/0015#_lattice_paths.rs"] mod lattice_paths;
+#[path = "11-20/0016#_power_digit_sum.rs"] mod power_digit_sum;
 
 struct Gap {
     amount: i16,
@@ -53,10 +54,6 @@ fn main() {
     let mut gap: Gap = Gap::new(None, None);
     gap.default();
     match args[1].parse::<i32>().expect("you must provide a number") {
-        0 => {
-            // #[path ="test.rs"] mod test;
-            // test::start();
-        }
         1 => multiples_of_3_or_5::start(),
         2 => even_fibonacci_numbers::start(),
         3 => largest_prime_factor::start(),
@@ -72,6 +69,7 @@ fn main() {
         13 => large_sum::start(),
         14 => longest_collatz_sequence::start(),
         15 => lattice_paths::start(),
+        16 => power_digit_sum::start(),
         _ => ()
     }
     gap.default();
