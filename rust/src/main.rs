@@ -3,16 +3,16 @@
 use std::env;
 
 
-#[path = "0001#_multiples_of_3_or_5.rs"] mod multiples_of_3_or_5;
-#[path = "0002#_even_fibonacci_numbers.rs"] mod even_fibonacci_numbers;
-#[path = "0003#_largest_prime_factor.rs"] mod largest_prime_factor;
-#[path = "0004#_largest_palindrome_product.rs"] mod largest_palindrome_product;
-#[path = "0005#_smallest_multiple.rs"] mod smallest_multiple;
-#[path = "0006#_sum_square_difference.rs"] mod sum_square_difference;
-#[path = "0007#_10001st_prime.rs"] mod _10001st_prime;
-#[path = "0008#_largest_product_in_a_series.rs"] mod largest_product_in_a_series;
-#[path = "0009#_special_pythagorean_triplet.rs"] mod special_pythagorean_triplet;
-#[path = "0010#_summation_of_primes.rs"] mod summation_of_primes;
+#[path = "1-10/0001#_multiples_of_3_or_5.rs"] mod multiples_of_3_or_5;
+#[path = "1-10/0002#_even_fibonacci_numbers.rs"] mod even_fibonacci_numbers;
+#[path = "1-10/0003#_largest_prime_factor.rs"] mod largest_prime_factor;
+#[path = "1-10/0004#_largest_palindrome_product.rs"] mod largest_palindrome_product;
+#[path = "1-10/0005#_smallest_multiple.rs"] mod smallest_multiple;
+#[path = "1-10/0006#_sum_square_difference.rs"] mod sum_square_difference;
+#[path = "1-10/0007#_10001st_prime.rs"] mod _10001st_prime;
+#[path = "1-10/0008#_largest_product_in_a_series.rs"] mod largest_product_in_a_series;
+#[path = "1-10/0009#_special_pythagorean_triplet.rs"] mod special_pythagorean_triplet;
+#[path = "1-10/0010#_summation_of_primes.rs"] mod summation_of_primes;
 #[path = "0011#_largest_product_in_a_grid.rs"] mod largest_product_in_a_grid;
 #[path = "0012#_highly_divisible_triangular_number.rs"] mod highly_divisible_triangular_number;
 #[path = "0013#_large_sum.rs"] mod large_sum;
