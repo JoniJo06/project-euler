@@ -1,4 +1,4 @@
-mod math;
+use crate::math;
 
 pub fn start() {
   println!("0007# 10001st prime");

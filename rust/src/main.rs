@@ -2,6 +2,7 @@
 
 use std::env;
 
+#[path = "math.rs"] mod math;
 
 #[path = "1-10/0001#_multiples_of_3_or_5.rs"] mod multiples_of_3_or_5;
 #[path = "1-10/0002#_even_fibonacci_numbers.rs"] mod even_fibonacci_numbers;
@@ -16,6 +17,7 @@ use std::env;
 #[path = "11-20/0011#_largest_product_in_a_grid.rs"] mod largest_product_in_a_grid;
 #[path = "11-20/0012#_highly_divisible_triangular_number.rs"] mod highly_divisible_triangular_number;
 #[path = "11-20/0013#_large_sum.rs"] mod large_sum;
+#[path = "11-20/0014#_longest_collatz_sequence.rs"] mod longest_collatz_sequence;
 
 struct Gap {
     amount: i16,
@@ -67,6 +69,7 @@ fn main() {
         11 => largest_product_in_a_grid::start(),
         12 => highly_divisible_triangular_number::start(),
         13 => large_sum::start(),
+        14 => longest_collatz_sequence::start(),
         _ => ()
     }
     gap.default();
