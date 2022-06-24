@@ -1,4 +1,4 @@
-mod math;
+use crate::math;
 
 pub fn start() {
   println!("0010# summation of primes");

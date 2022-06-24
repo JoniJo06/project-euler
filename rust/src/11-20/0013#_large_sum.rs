@@ -1,9 +1,7 @@
-use num::{BigUint, Zero};
+use num::BigUint;
 
 pub fn start() {
   println!("0013# large sum");
-
-  let mut result: BigUint = BigUint::zero();
 
   let input = "37107287533902102798797998220837590246510135740250
 46376937677490009712648124896970078050417018260538
