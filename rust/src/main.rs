@@ -15,6 +15,7 @@ use std::env;
 #[path = "0010#_summation_of_primes.rs"] mod summation_of_primes;
 #[path = "0011#_largest_product_in_a_grid.rs"] mod largest_product_in_a_grid;
 #[path = "0012#_highly_divisible_triangular_number.rs"] mod highly_divisible_triangular_number;
+#[path = "0013#_large_sum.rs"] mod large_sum;
 
 struct Gap {
     amount: i16,
@@ -65,6 +66,7 @@ fn main() {
         10 => summation_of_primes::start(),
         11 => largest_product_in_a_grid::start(),
         12 => highly_divisible_triangular_number::start(),
+        13 => large_sum::start(),
         _ => ()
     }
     gap.default();
