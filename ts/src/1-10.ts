@@ -174,3 +174,42 @@ export const largest_product_in_a_series = (): [string, number] => {
 	
 	return ['8# largest product in a series', result];
 }
+
+export const special_pythagorean_triplet = (): [string, number] => {
+	let result: number = 0;
+	let a: number = 0;
+	let b: number = 0;
+	let c: number = 0;
+
+	cLoop:
+	while (true) {
+		c++;
+		bLoop:
+		while (true) {
+			b++;
+			aLoop:
+			while (true) {
+				a++;
+				if (a >= b) {
+					a = 1;
+					continue bLoop;
+				}
+				if (b >= c) {
+					b = 1;
+					continue cLoop;
+				}
+
+				if (Math.pow(a, 2) + Math.pow(b, 2) != Math.pow(c, 2)) {
+					continue aLoop;
+				}
+
+				if (a + b + c == 1000) {
+					result = a * b * c;
+					break cLoop;
+				}
+			}
+		}
+	}
+
+	return ['9# special pythagorean triplet', result];
+}

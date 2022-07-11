@@ -13,6 +13,7 @@ import {
 	sum_square_difference,
 	_10001st_prime,
 	largest_product_in_a_series,
+	special_pythagorean_triplet,
 } from './1-10';
 
 const DEBUG = false;
@@ -57,6 +58,7 @@ const main = () => {
 		sum_square_difference,
 		_10001st_prime,
 		largest_product_in_a_series,
+		special_pythagorean_triplet,
   ];
 
 
