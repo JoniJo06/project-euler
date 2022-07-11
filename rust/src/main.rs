@@ -40,7 +40,6 @@ mod sum_square_difference;
 mod summation_of_primes;
 ///!SECTION
 
-
 struct Gap {
     amount: i16,
     character: char,
