@@ -267,15 +267,7 @@ pub fn power_digit_sum() -> (&'static str, i128) {
     let number = BigUint::parse_bytes(b"2", 10).unwrap();
     let number = number.pow(1000);
 
-    let numbers = number
-        .to_string()
-        .chars()
-        .map(|x| x.to_string().parse::<u32>().unwrap())
-        .collect::<Vec<u32>>();
-
-    for num in numbers {
-        result += num;
-    }
+    number.to_string().chars().for_each(|x| result += x.to_string().parse::<u32>().unwrap());
 
     ("16# power digit sum", result as i128)
 }
