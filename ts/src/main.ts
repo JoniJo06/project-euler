@@ -17,7 +17,11 @@ import {
 	summation_of_primes,
 } from './1-10';
 
-const DEBUG = true;
+import {
+	largest_product_in_a_grid,
+} from './11-20'
+
+const DEBUG = false;
 const SOLVED = true;
 
 const compare = (n: number, result: string | number) => {
@@ -39,7 +43,7 @@ const main = () => {
 		exit(1);
 	}
 
-	if (DEBUG) console.log("command line arguments" + argv);
+	if (DEBUG) console.log("command line arguments " + argv);
 
 	// @ts-ignore-next-line
 	const problem: number = parseInt(argv.shift(), 10);
@@ -50,7 +54,8 @@ const main = () => {
 
 	let startTime = new Date();
 
-  let problems: Function[] = [
+	let problems: Function[] = [
+		// 1-10
     multiples_of_3_or_5,
     even_fibonacci_numbers,
 		largest_prime_factor,
@@ -61,6 +66,8 @@ const main = () => {
 		largest_product_in_a_series,
 		special_pythagorean_triplet,
 		summation_of_primes,
+		// 11-20
+		largest_product_in_a_grid,
   ];
 
 
