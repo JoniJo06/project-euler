@@ -9,6 +9,10 @@ import {
 	even_fibonacci_numbers,
 	largest_prime_factor,
 	largest_palindrome_product,
+	smallest_multiple,
+	sum_square_difference,
+	_10001st_prime,
+	largest_product_in_a_series,
 } from './1-10';
 
 const DEBUG = false;
@@ -33,7 +37,7 @@ const main = () => {
 		exit(1);
 	}
 
-	if (DEBUG) console.log(argv);
+	if (DEBUG) console.log("command line arguments" + argv);
 
 	// @ts-ignore-next-line
 	const problem: number = parseInt(argv.shift(), 10);
@@ -42,14 +46,19 @@ const main = () => {
 		exit(1);
 	}
 
+	let startTime = new Date();
+
   let problems: Function[] = [
     multiples_of_3_or_5,
     even_fibonacci_numbers,
 		largest_prime_factor,
 		largest_palindrome_product,
+		smallest_multiple,
+		sum_square_difference,
+		_10001st_prime,
+		largest_product_in_a_series,
   ];
 
-	let result: string | number = 0;
 
   if (problem > problems.length) {
     console.error("problem out of range");
@@ -57,11 +66,19 @@ const main = () => {
     exit(1);
   }
 
-	result = problems[problem - 1].call(this);
+	let [name, result]: [string, number] = problems[problem - 1].call(this);
 
+	console.log("-----------------------")
+	console.log(name)
 	console.log('Result: ' + result);
+	console.log("-----------------------")
 	if (SOLVED) compare(problem, result);
 
-	if (DEBUG) console.log(problem);
+	let endTime = new Date();
+	let timeElapsed = endTime.getTime() - startTime.getTime();
+	if (DEBUG) {
+		console.log(problem);
+		console.log("ms elapsed: " + timeElapsed);
+	}
 };
 main();
