@@ -1,4 +1,4 @@
-const multiples_of_3_or_5 = (): void => {
+const multiples_of_3_or_5 = (): number => {
   let result: number = 0;
 
   for (let n = 0; n < 1000; n++) {
@@ -12,8 +12,7 @@ const multiples_of_3_or_5 = (): void => {
     }
   }
 
-  console.log(`Result: ${result}`);
-  return
+  return result;
 }
 
 export default multiples_of_3_or_5;
