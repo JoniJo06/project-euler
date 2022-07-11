@@ -213,3 +213,14 @@ export const special_pythagorean_triplet = (): [string, number] => {
 
 	return ['9# special pythagorean triplet', result];
 }
+
+export const summation_of_primes = (): [string, number] => {
+	let result: number = 0;
+
+	for (let i = 0; i < 2_000_000; i++) {
+		if (isPrime(i))
+			result += i;
+	}
+
+	return ["10# summation of primes", result];
+}

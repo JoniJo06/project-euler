@@ -14,9 +14,10 @@ import {
 	_10001st_prime,
 	largest_product_in_a_series,
 	special_pythagorean_triplet,
+	summation_of_primes,
 } from './1-10';
 
-const DEBUG = false;
+const DEBUG = true;
 const SOLVED = true;
 
 const compare = (n: number, result: string | number) => {
@@ -59,6 +60,7 @@ const main = () => {
 		_10001st_prime,
 		largest_product_in_a_series,
 		special_pythagorean_triplet,
+		summation_of_primes,
   ];
 
 
