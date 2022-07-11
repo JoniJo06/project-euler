@@ -42,7 +42,6 @@ pub fn even_fibonacci_numbers() -> (&'static str, i128) {
 }
 
 pub fn largest_prime_factor() -> (&'static str, i128) {
-
     let mut root_number = 600851475143_f64;
 
     let mut result = 0_f64;
@@ -134,7 +133,6 @@ pub fn _10001st_prime() -> (&'static str, i128) {
     ("7# 10001st prime", i as i128)
 }
 
-
 pub fn largest_product_in_a_series() -> (&'static str, i128) {
     let mut result = 0;
 
@@ -219,7 +217,6 @@ pub fn special_pythagorean_triplet() -> (&'static str, i128) {
     }
 
     ("9# special pythagorean triplet", result as i128)
-
 }
 
 pub fn summation_of_primes() -> (&'static str, i128) {

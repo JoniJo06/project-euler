@@ -1,6 +1,12 @@
 #![allow(dead_code)]
 
-use std::{env, process::exit, path::Path, fs::File, io::{BufReader, BufRead}};
+use std::{
+    env,
+    fs::File,
+    io::{BufRead, BufReader},
+    path::Path,
+    process::exit,
+};
 
 #[path = "math.rs"]
 mod math;
@@ -10,7 +16,6 @@ mod _1_10;
 
 #[path = "11-20.rs"]
 mod _11_20;
-
 
 struct Gap {
     amount: i16,
@@ -45,11 +50,18 @@ fn compare(n: usize, result: i128) {
         panic!("File does not exist");
     }
 
-
     let file = File::open(path).unwrap();
     let reader = BufReader::new(file);
 
-    let mut lines: Vec<i128> = reader.lines().enumerate().map(|(num, line)| line.unwrap().parse::<i128>().unwrap_or_else(|_| panic!("unable to parse line {}", num))).collect();
+    let mut lines: Vec<i128> = reader
+        .lines()
+        .enumerate()
+        .map(|(num, line)| {
+            line.unwrap()
+                .parse::<i128>()
+                .unwrap_or_else(|_| panic!("unable to parse line {}", num))
+        })
+        .collect();
     lines.insert(0, 0);
 
     if lines.len() <= n {
@@ -82,8 +94,7 @@ fn main() {
         _11_20::longest_collatz_sequence,
         _11_20::lattice_paths,
         _11_20::power_digit_sum,
-        ];
-
+    ];
 
     let problem = args[1].parse::<usize>().expect("you must provide a number");
     if problem < 1 || problem > problems.len() {

@@ -1,16 +1,16 @@
 use num::BigUint;
 
 fn get_item_from_grid(grid: &Vec<Vec<u32>>, row: i32, col: i32) -> u32 {
-  if 0 <= row && row < grid.len() as i32 && 0 <= col && col < grid[row as usize].len() as i32 {
-    return grid[row as usize][col as usize];
-  }
-  0
+    if 0 <= row && row < grid.len() as i32 && 0 <= col && col < grid[row as usize].len() as i32 {
+        return grid[row as usize][col as usize];
+    }
+    0
 }
 
 pub fn largest_product_in_a_grid() -> (&'static str, i128) {
-  let mut result = 0;
-  
-  let grid = "08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
+    let mut result = 0;
+
+    let grid = "08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
   49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00
   81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 03 49 13 36 65
   52 70 95 23 04 60 11 42 69 24 68 56 01 32 56 71 37 02 36 91
@@ -30,37 +30,37 @@ pub fn largest_product_in_a_grid() -> (&'static str, i128) {
   20 69 36 41 72 30 23 88 34 62 99 69 82 67 59 85 74 04 36 16
   20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
   01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48";
-  
-  let grid = grid.split('\n').collect::<Vec<&str>>();
-  let grid = grid
-  .iter()
-  .map(|x| {
-    x.split(' ')
-    .map(|y| y.parse::<u32>().unwrap())
-    .collect::<Vec<u32>>()
-  })
-  .collect::<Vec<Vec<u32>>>();
-  
-  for row in 0..grid.len() as i32 {
-    for col in 0..grid[0].len() as i32 {
-      let mut p1 = 1;
-      let mut p2 = 1;
-      let mut p3 = 1;
-      let mut p4 = 1;
 
-      for i in 0..4 {
-        p1 *= get_item_from_grid(&grid, row, col + i);
-        p2 *= get_item_from_grid(&grid, row + i, col);
-        p3 *= get_item_from_grid(&grid, row + i, col + i);
-        p4 *= get_item_from_grid(&grid, row + i, col - i);
-      }
-      let mut val = vec![p1, p2, p3, p4, result];
-      val.sort_unstable();
-      result = val[val.len() - 1];
+    let grid = grid.split('\n').collect::<Vec<&str>>();
+    let grid = grid
+        .iter()
+        .map(|x| {
+            x.split(' ')
+                .map(|y| y.parse::<u32>().unwrap())
+                .collect::<Vec<u32>>()
+        })
+        .collect::<Vec<Vec<u32>>>();
+
+    for row in 0..grid.len() as i32 {
+        for col in 0..grid[0].len() as i32 {
+            let mut p1 = 1;
+            let mut p2 = 1;
+            let mut p3 = 1;
+            let mut p4 = 1;
+
+            for i in 0..4 {
+                p1 *= get_item_from_grid(&grid, row, col + i);
+                p2 *= get_item_from_grid(&grid, row + i, col);
+                p3 *= get_item_from_grid(&grid, row + i, col + i);
+                p4 *= get_item_from_grid(&grid, row + i, col - i);
+            }
+            let mut val = vec![p1, p2, p3, p4, result];
+            val.sort_unstable();
+            result = val[val.len() - 1];
+        }
     }
-  }
-  
-  ("11# largest product in a grid", result as i128)
+
+    ("11# largest product in a grid", result as i128)
 }
 
 pub fn highly_divisible_triangular_number() -> (&'static str, i128) {
@@ -84,14 +84,13 @@ pub fn highly_divisible_triangular_number() -> (&'static str, i128) {
         // println!();
         // println!("Divisible Count: {}", divisible_count);
         if divisible_count > n {
-          break 'main;
+            break 'main;
         }
         i += 1;
     }
 
     ("12# highly divisible triangular numbers", number as i128)
 }
-
 
 pub fn large_sum() -> (&'static str, i128) {
     let input = "37107287533902102798797998220837590246510135740250
@@ -267,8 +266,10 @@ pub fn power_digit_sum() -> (&'static str, i128) {
     let number = BigUint::parse_bytes(b"2", 10).unwrap();
     let number = number.pow(1000);
 
-    number.to_string().chars().for_each(|x| result += x.to_string().parse::<u32>().unwrap());
+    number
+        .to_string()
+        .chars()
+        .for_each(|x| result += x.to_string().parse::<u32>().unwrap());
 
     ("16# power digit sum", result as i128)
 }
-
