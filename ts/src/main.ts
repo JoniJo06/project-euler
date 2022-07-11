@@ -4,7 +4,12 @@ import { exit } from 'process';
 import { equal } from 'assert';
 
 import fs from 'fs-extra';
-import {multiples_of_3_or_5, even_fibonacci_numbers, largest_prime_factor} from './1-10';
+import {
+	multiples_of_3_or_5,
+	even_fibonacci_numbers,
+	largest_prime_factor,
+	largest_palindrome_product,
+} from './1-10';
 
 const DEBUG = false;
 const SOLVED = true;
@@ -40,7 +45,8 @@ const main = () => {
   let problems: Function[] = [
     multiples_of_3_or_5,
     even_fibonacci_numbers,
-    largest_prime_factor,
+		largest_prime_factor,
+		largest_palindrome_product,
   ];
 
 	let result: string | number = 0;

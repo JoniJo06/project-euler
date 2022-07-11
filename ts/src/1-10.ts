@@ -57,3 +57,24 @@ export const largest_prime_factor = (): number => {
 
 	return result;
 };
+
+export const largest_palindrome_product = (): number => {
+	let result: number = 0;
+
+	for (let i = 100; i < 999; i++) {
+		for (let j = 100; j < 999; j++) {
+			let product: number = i * j;
+			let rev_product: number = Number(
+				product
+					.toString()
+					.split('')
+					.reverse()
+					.join("")
+			);
+			if (product === rev_product && product > result) {
+				result = product;
+			}
+		}
+	}
+	return result;
+};
