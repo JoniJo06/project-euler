@@ -5,6 +5,7 @@ use std::env;
 #[path = "math.rs"]
 mod math;
 
+//SECTION - problem modules
 #[path = "1-10/0007#_10001st_prime.rs"]
 mod _10001st_prime;
 #[path = "1-10/0002#_even_fibonacci_numbers.rs"]
@@ -37,6 +38,8 @@ mod special_pythagorean_triplet;
 mod sum_square_difference;
 #[path = "1-10/0010#_summation_of_primes.rs"]
 mod summation_of_primes;
+///!SECTION
+
 
 struct Gap {
     amount: i16,
