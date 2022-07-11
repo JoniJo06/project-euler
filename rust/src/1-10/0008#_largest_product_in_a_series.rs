@@ -28,7 +28,7 @@ pub fn start() {
 
     type MyType = u64;
 
-    let numbers: String = input.split("\n").collect();
+    let numbers: String = input.split('\n').collect();
     let numbers: Vec<MyType> = numbers
         .chars()
         .map(|x| x.to_string().parse::<MyType>().unwrap())
@@ -36,7 +36,7 @@ pub fn start() {
 
     let n = 13;
 
-    for i in 0..&numbers.len() - n {
+    for i in 0..numbers.len() - n {
         let mut product = 1;
         for j in 0..n {
             product *= numbers.index(i + j);

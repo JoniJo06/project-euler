@@ -105,7 +105,7 @@ pub fn start() {
 53503534226472524250874054075591789781264330331690";
 
     let numbers = input
-        .split("\n")
+        .split('\n')
         .map(|x| BigUint::parse_bytes(x.as_bytes(), 10).unwrap())
         .collect::<Vec<BigUint>>();
 

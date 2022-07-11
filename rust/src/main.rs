@@ -55,13 +55,13 @@ impl Gap {
         for _ in 0..self.amount {
             print!("{}", self.character);
         }
-        print!("\n");
+        println!();
     }
     fn print(&mut self, amount: i16, character: char) {
         for _ in 0..amount {
             print!("{}", character);
         }
-        print!("\n");
+        println!();
     }
 }
 

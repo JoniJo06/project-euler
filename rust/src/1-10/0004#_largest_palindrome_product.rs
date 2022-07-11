@@ -12,10 +12,8 @@ pub fn start() {
                 .collect::<String>()
                 .parse::<i32>()
                 .unwrap();
-            if product == rev_product {
-                if product > result {
-                    result = product;
-                }
+            if product == rev_product && product > result {
+                result = product;
             }
         }
     }

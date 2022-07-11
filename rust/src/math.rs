@@ -24,5 +24,5 @@ pub fn is_prime(k: u64) -> bool {
         i += 6;
     }
 
-    return true;
+    true
 }

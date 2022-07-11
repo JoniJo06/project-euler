@@ -4,7 +4,7 @@ fn get(grid: &Vec<Vec<NumType>>, row: i32, col: i32) -> NumType {
     if 0 <= row && row < grid.len() as i32 && 0 <= col && col < grid[row as usize].len() as i32 {
         return grid[row as usize][col as usize];
     }
-    return 0;
+    0
 }
 
 pub fn start() {
@@ -33,11 +33,11 @@ pub fn start() {
 20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48";
 
-    let grid = grid.split("\n").collect::<Vec<&str>>();
+    let grid = grid.split('\n').collect::<Vec<&str>>();
     let grid = grid
         .iter()
         .map(|x| {
-            x.split(" ")
+            x.split(' ')
                 .map(|y| y.parse::<NumType>().unwrap())
                 .collect::<Vec<NumType>>()
         })
@@ -57,7 +57,7 @@ pub fn start() {
                 p4 *= get(&grid, row + i, col - i);
             }
             let mut val = vec![p1, p2, p3, p4, result];
-            val.sort();
+            val.sort_unstable();
             result = val[val.len() - 1];
         }
     }

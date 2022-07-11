@@ -23,7 +23,7 @@ pub fn start() {
                     continue 'c;
                 }
 
-                if !(a.pow(2) + b.pow(2) == c.pow(2)) {
+                if a.pow(2) + b.pow(2) != c.pow(2) {
                     continue 'a;
                 }
 

@@ -11,16 +11,15 @@ fn f(memory: &mut Vec<Vec<u64>>, x: usize, y: usize) -> u64 {
         return memory[x][y];
     }
     memory[x][y] = f(&mut *memory, x - 1, y) + f(&mut *memory, x, y - 1);
-    return memory[x][y];
+    memory[x][y]
 }
 
 pub fn start() {
     println!("0015# lattice paths");
-    let result;
     let grid_size = 20;
     let mut memory = vec![vec![0_u64; grid_size + 1]; grid_size + 1];
 
-    result = f(&mut memory, grid_size, grid_size);
+    let result = f(&mut memory, grid_size, grid_size);
 
     println!("Result: {:?}", result)
 }

@@ -18,7 +18,7 @@ pub fn start() {
                 print!("{} ", j);
             }
         }
-        print!("\n");
+        println!();
         println!("Divisible Count: {}", divisible_count);
         if divisible_count > n {
             break 'main;
