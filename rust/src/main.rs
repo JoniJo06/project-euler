@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 
-use std::{env, process::exit};
+use std::{env, process::exit, path::Path, fs::File, io::{BufReader, BufRead}};
 
 #[path = "math.rs"]
 mod math;
@@ -39,6 +39,26 @@ impl Gap {
     }
 }
 
+fn compare(n: usize, result: i128) {
+    let path = Path::new("./../results.txt");
+    if !path.exists() {
+        assert!(false, "File does not exist");
+    }
+
+
+    let file = File::open(path).unwrap();
+    let reader = BufReader::new(file);
+
+    let mut lines: Vec<i128> = reader.lines().enumerate().map(|(num, line)| line.unwrap().parse::<i128>().expect(format!("unable to parse line {}", num).as_str())).collect();
+    lines.insert(0, 0);
+
+    if lines.len() <= n {
+        println!("Does not exist in results.txt");
+        return;
+    }
+
+    assert_eq!(lines[n], result);
+}
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -74,6 +94,7 @@ fn main() {
     let (name, result) = problems[problem - 1]();
     println!("{}", name);
     println!("Result {}", result);
+    compare(problem, result);
 
     gap.default();
 }
