@@ -1,12 +1,10 @@
 /** @format */
 
 import { exit } from 'process';
-import assert, { equal } from 'assert';
+import { equal } from 'assert';
 
 import fs from 'fs-extra';
-import multiples_of_3_or_5 from './1-10/1#_multiples_of_3_or_5';
-import even_fibonacci_numbers from './1-10/2#_even_fibonacci_numbers';
-import largest_prime_factor from './1-10/3#_largest_prime_factor';
+import {multiples_of_3_or_5, even_fibonacci_numbers, largest_prime_factor} from './1-10';
 
 const DEBUG = false;
 const SOLVED = true;
