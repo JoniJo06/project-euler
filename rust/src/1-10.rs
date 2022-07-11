@@ -54,7 +54,7 @@ pub fn largest_prime_factor() -> (&'static str, i128) {
         }
     }
 
-    ("0003# largest prime factor", result as i128)
+    ("3# largest prime factor", result as i128)
 }
 
 pub fn largest_palindrome_product() -> (&'static str, i128) {
@@ -136,8 +136,6 @@ pub fn _10001st_prime() -> (&'static str, i128) {
 
 
 pub fn largest_product_in_a_series() -> (&'static str, i128) {
-    println!("0008# largest product in a series");
-
     let mut result = 0;
 
     let input = "73167176531330624919225119674426574742355349194934

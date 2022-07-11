@@ -42,14 +42,14 @@ impl Gap {
 fn compare(n: usize, result: i128) {
     let path = Path::new("./../results.txt");
     if !path.exists() {
-        assert!(false, "File does not exist");
+        panic!("File does not exist");
     }
 
 
     let file = File::open(path).unwrap();
     let reader = BufReader::new(file);
 
-    let mut lines: Vec<i128> = reader.lines().enumerate().map(|(num, line)| line.unwrap().parse::<i128>().expect(format!("unable to parse line {}", num).as_str())).collect();
+    let mut lines: Vec<i128> = reader.lines().enumerate().map(|(num, line)| line.unwrap().parse::<i128>().unwrap_or_else(|_| panic!("unable to parse line {}", num))).collect();
     lines.insert(0, 0);
 
     if lines.len() <= n {
