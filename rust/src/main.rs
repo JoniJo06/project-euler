@@ -45,7 +45,7 @@ fn main() {
     let mut gap: Gap = Gap::new(None, None);
     gap.default();
 
-    let problems: Vec<fn()> = vec![
+    let problems: Vec<fn() -> (&'static str, i128)> = vec![
         _1_10::multiples_of_3_or_5,
         _1_10::even_fibonacci_numbers,
         _1_10::largest_prime_factor,
@@ -64,13 +64,16 @@ fn main() {
         _11_20::power_digit_sum,
         ];
 
+
     let problem = args[1].parse::<usize>().expect("you must provide a number");
     if problem < 1 || problem > problems.len() {
         eprintln!("problem out of range");
         eprintln!("try to access problem {} of {}!", problem, problems.len());
         exit(1);
     }
-    let result = problems[problem - 1]();
+    let (name, result) = problems[problem - 1]();
+    println!("{}", name);
+    println!("Result {}", result);
 
     gap.default();
 }

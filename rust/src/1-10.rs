@@ -1,9 +1,7 @@
 use crate::math;
 use std::ops::Index;
 
-pub fn multiples_of_3_or_5() {
-    println!("0001# multiples of 3 or 5");
-
+pub fn multiples_of_3_or_5() -> (&'static str, i128) {
     let mut result = 0;
     let mut numbers: Vec<i32> = Vec::new();
 
@@ -22,12 +20,10 @@ pub fn multiples_of_3_or_5() {
         result += number;
     }
 
-    println!("Result: {}", result);
+    ("1# multiples of 3 or 5", result as i128)
 }
 
-pub fn even_fibonacci_numbers() {
-    println!("0002# even fibonacci numbers");
-
+pub fn even_fibonacci_numbers() -> (&'static str, i128) {
     let mut result: i32 = 0;
 
     let mut a = 1;
@@ -42,11 +38,10 @@ pub fn even_fibonacci_numbers() {
         b = temp;
     }
 
-    println!("Result: {}", result);
+    ("2# even fibonacci numbers", result as i128)
 }
 
-pub fn largest_prime_factor() {
-    println!("0003# largest prime factor");
+pub fn largest_prime_factor() -> (&'static str, i128) {
 
     let mut root_number = 600851475143_f64;
 
@@ -68,11 +63,10 @@ pub fn largest_prime_factor() {
         result = root_number;
     }
 
-    println!("Result: {}", result);
+    ("0003# largest prime factor", result as i128)
 }
 
-pub fn largest_palindrome_product() {
-    println!("0004# largest palindrome product");
+pub fn largest_palindrome_product() -> (&'static str, i128) {
     let mut result = 0;
 
     for i in 100..999 {
@@ -91,11 +85,10 @@ pub fn largest_palindrome_product() {
         }
     }
 
-    println!("Result: {}", result);
+    ("4# largest palindrome product", result as i128)
 }
 
-pub fn smallest_multiple() {
-    println!("0005# smallest multiple");
+pub fn smallest_multiple() -> (&'static str, i128) {
     let result;
     let mut n: u128 = 20;
     loop {
@@ -113,12 +106,10 @@ pub fn smallest_multiple() {
         n += 20;
     }
 
-    println!("Result: {}", result);
+    ("5# smallest multiple", result as i128)
 }
 
-pub fn sum_square_difference() {
-    println!("0006# sum square difference");
-
+pub fn sum_square_difference() -> (&'static str, i128) {
     let n = 100;
     let mut sum_square = 0;
 
@@ -133,12 +124,11 @@ pub fn sum_square_difference() {
     square_sum = i32::pow(square_sum, 2);
 
     let result = square_sum - sum_square;
-    println!("Result: {}", result);
+
+    ("6# sum square difference", result as i128)
 }
 
-pub fn _10001st_prime() {
-    println!("0007# 10001st prime");
-
+pub fn _10001st_prime() -> (&'static str, i128) {
     let mut n = 10001;
     let mut i = 2;
     while n > 0 {
@@ -150,11 +140,11 @@ pub fn _10001st_prime() {
     }
     i -= 1;
 
-    println!("Result: {}", i);
+    ("7# 10001st prime", i as i128)
 }
 
 
-pub fn largest_product_in_a_series() {
+pub fn largest_product_in_a_series() -> (&'static str, i128) {
     println!("0008# largest product in a series");
 
     let mut result = 0;
@@ -200,11 +190,10 @@ pub fn largest_product_in_a_series() {
         }
     }
 
-    println!("Result: {}", result);
+    ("8# largest product in a series", result as i128)
 }
 
-pub fn special_pythagorean_triplet() {
-    println!("0009# special pythagorean triplet");
+pub fn special_pythagorean_triplet() -> (&'static str, i128) {
     let result;
 
     let mut a: i32 = 0;
@@ -240,11 +229,11 @@ pub fn special_pythagorean_triplet() {
         }
     }
 
-    println!("Result: {}", result);
+    ("9# special pythagorean triplet", result as i128)
+
 }
 
-pub fn summation_of_primes() {
-    println!("0010# summation of primes");
+pub fn summation_of_primes() -> (&'static str, i128) {
     let mut result: u64 = 0;
 
     for num in 0..2_000_000_u64 {
@@ -253,5 +242,5 @@ pub fn summation_of_primes() {
         }
     }
 
-    println!("Result: {}", result);
+    ("10# summation of primes", result as i128)
 }
