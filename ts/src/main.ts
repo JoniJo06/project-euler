@@ -1,9 +1,11 @@
 /** @format */
 
 import { exit } from 'process';
+import { equal } from 'assert';
+
 import fs from 'fs-extra';
 import multiples_of_3_or_5 from './1-10/1#_multiples_of_3_or_5';
-import { equal } from 'assert';
+import even_fibonacci_numbers from './1-10/2#_even_fibonacci_numbers';
 
 const DEBUG = false;
 const SOLVED = true;
@@ -33,16 +35,14 @@ const main = () => {
 	if (isNaN(problem)) {
 		console.error(`Usage: ${program} <problem number>`);
 		exit(1);
-	}
+  }
+  
+  let problems: Function[] = [multiples_of_3_or_5, even_fibonacci_numbers];
 
 	let result: string | number = 0;
 
-	switch (problem) {
-		case 1: {
-			result = multiples_of_3_or_5();
-			break;
-		}
-	}
+  result = problems[problem - 1].call(this);
+
 	console.log('Result: ' + result);
 	if (SOLVED) compare(problem, result);
 
