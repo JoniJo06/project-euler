@@ -1,9 +1,9 @@
 use num::BigUint;
 
 pub fn start() {
-  println!("0013# large sum");
+    println!("0013# large sum");
 
-  let input = "37107287533902102798797998220837590246510135740250
+    let input = "37107287533902102798797998220837590246510135740250
 46376937677490009712648124896970078050417018260538
 74324986199524741059474233309513058123726617309629
 91942213363574161572522430563301811072406154908250
@@ -104,9 +104,17 @@ pub fn start() {
 20849603980134001723930671666823555245252804609722
 53503534226472524250874054075591789781264330331690";
 
-let numbers = input.split("\n").map(|x| BigUint::parse_bytes(x.as_bytes(), 10).unwrap()).collect::<Vec<BigUint>>();
+    let numbers = input
+        .split("\n")
+        .map(|x| BigUint::parse_bytes(x.as_bytes(), 10).unwrap())
+        .collect::<Vec<BigUint>>();
 
-let result = numbers.iter().sum::<BigUint>().to_string().split("").collect::<String>();
+    let result = numbers
+        .iter()
+        .sum::<BigUint>()
+        .to_string()
+        .split("")
+        .collect::<String>();
 
-  println!("Result: {:?}", &result[..10]);
+    println!("Result: {:?}", &result[..10]);
 }

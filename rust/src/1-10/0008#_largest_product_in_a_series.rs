@@ -1,11 +1,11 @@
 use std::ops::Index;
 
 pub fn start() {
-  println!("0008# largest product in a series");
+    println!("0008# largest product in a series");
 
-  let mut result = 0;
+    let mut result = 0;
 
-  let input = "73167176531330624919225119674426574742355349194934
+    let input = "73167176531330624919225119674426574742355349194934
 96983520312774506326239578318016984801869478851843
 85861560789112949495459501737958331952853208805511
 12540698747158523863050715693290963295227443043557
@@ -26,24 +26,25 @@ pub fn start() {
 05886116467109405077541002256983155200055935729725
 71636269561882670428252483600823257530420752963450";
 
-type MyType = u64;
+    type MyType = u64;
 
-let numbers: String = input.split("\n").collect();
-let numbers: Vec<MyType> = numbers.chars().map(|x| x.to_string().parse::<MyType>().unwrap()).collect();
+    let numbers: String = input.split("\n").collect();
+    let numbers: Vec<MyType> = numbers
+        .chars()
+        .map(|x| x.to_string().parse::<MyType>().unwrap())
+        .collect();
 
-let n = 13;
+    let n = 13;
 
-for i in 0..&numbers.len() - n  {
-  let mut product = 1;
-  for j in 0..n {
-    product *= numbers.index(i + j);
-  }
-  if product > result {
-    result = product;
-  }
-}
+    for i in 0..&numbers.len() - n {
+        let mut product = 1;
+        for j in 0..n {
+            product *= numbers.index(i + j);
+        }
+        if product > result {
+            result = product;
+        }
+    }
 
-
-println!("Result: {}", result);
-
+    println!("Result: {}", result);
 }

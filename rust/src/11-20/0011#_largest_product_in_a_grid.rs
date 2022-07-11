@@ -1,19 +1,18 @@
 type NumType = u32;
 
 fn get(grid: &Vec<Vec<NumType>>, row: i32, col: i32) -> NumType {
-  if 0 <= row && row < grid.len() as i32 && 0 <= col && col < grid[row as usize].len() as i32 {
-    return grid[row as usize][col as usize];
-  }
-  return 0;
+    if 0 <= row && row < grid.len() as i32 && 0 <= col && col < grid[row as usize].len() as i32 {
+        return grid[row as usize][col as usize];
+    }
+    return 0;
 }
 
 pub fn start() {
-  println!("0011# largest product in a grid");
+    println!("0011# largest product in a grid");
 
-  let mut result = 0;
+    let mut result = 0;
 
-
-  let grid = "08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
+    let grid = "08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00
 81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 03 49 13 36 65
 52 70 95 23 04 60 11 42 69 24 68 56 01 32 56 71 37 02 36 91
@@ -34,27 +33,34 @@ pub fn start() {
 20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48";
 
-  let grid = grid.split("\n").collect::<Vec<&str>>();
-  let grid = grid.iter().map(|x| x.split(" ").map(|y| y.parse::<NumType>().unwrap()).collect::<Vec<NumType>>()).collect::<Vec<Vec<NumType>>>();
+    let grid = grid.split("\n").collect::<Vec<&str>>();
+    let grid = grid
+        .iter()
+        .map(|x| {
+            x.split(" ")
+                .map(|y| y.parse::<NumType>().unwrap())
+                .collect::<Vec<NumType>>()
+        })
+        .collect::<Vec<Vec<NumType>>>();
 
-  for row in 0..grid.len() as i32 {
-    for col in 0..grid[0].len() as i32 {
-      let mut p1  = 1;
-      let mut p2 = 1;
-      let mut p3 = 1;
-      let mut p4 = 1;
-      
-      for i in 0..4 {
-        p1 *= get(&grid, row, col + i);
-				p2 *= get(&grid, row + i, col);
-				p3 *= get(&grid, row + i, col + i);
-				p4 *= get(&grid, row + i, col - i);
-      }
-      let mut val = vec![p1, p2, p3, p4, result];
-      val.sort();
-      result = val[val.len() - 1];
+    for row in 0..grid.len() as i32 {
+        for col in 0..grid[0].len() as i32 {
+            let mut p1 = 1;
+            let mut p2 = 1;
+            let mut p3 = 1;
+            let mut p4 = 1;
+
+            for i in 0..4 {
+                p1 *= get(&grid, row, col + i);
+                p2 *= get(&grid, row + i, col);
+                p3 *= get(&grid, row + i, col + i);
+                p4 *= get(&grid, row + i, col - i);
+            }
+            let mut val = vec![p1, p2, p3, p4, result];
+            val.sort();
+            result = val[val.len() - 1];
+        }
     }
-  }
-  
-  println!("Result: {}", result);
+
+    println!("Result: {}", result);
 }
