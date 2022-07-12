@@ -147,7 +147,21 @@ void sum_square_difference(retTuple *ret) {
 	ret->result = result;
 }
 void _10001st_prime(retTuple *ret) {
+  ret->name = "7# 10001st prime";
+  
+  int n = 10001;
+	int i = 2;
 
+	while (n > 0) {
+		if (isPrime(i)) {
+			
+			n--;
+		}
+		i++;
+	}
+	i--;
+
+  ret->result = i;
 }
 void largest_product_in_a_series(retTuple *ret) {
 
