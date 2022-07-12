@@ -192,3 +192,23 @@ export const large_sum = (): [string, number] => {
 
   return ['13# large sum', result];
 }
+
+export const longest_collatz_sequence = (): [string, number] => {
+  let result: [number, number] = [0, 0]
+
+  for (let i = 0; i < 1_000_000; i++) {
+    let terms: number = 0;
+    let n: number = i;
+    while (n > 1) {
+      if (n % 2 == 0)
+        n /= 2;
+      else
+        n = n * 3 + 1;
+      terms++;
+    }
+    if (terms > result[1])
+      result = [i, terms];
+  }
+
+  return ['14# longest collatz sequence', result[0]];
+}

@@ -21,6 +21,7 @@ import {
 	largest_product_in_a_grid,
 	highly_divisible_triangular_number,
 	large_sum,
+	longest_collatz_sequence,
 } from './11-20'
 
 const DEBUG = false;
@@ -72,6 +73,7 @@ const main = () => {
 		largest_product_in_a_grid,
 		highly_divisible_triangular_number,
 		large_sum,
+		longest_collatz_sequence,
   ];
 
 
