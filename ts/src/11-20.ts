@@ -220,3 +220,12 @@ export const lattice_paths = (): [string, number] => {
   }
   return ["15# lattice paths", result];
 }
+
+export const power_digit_sum = (): [string, number] => {
+  let result: number = 0;
+
+  let number: bigint = BigInt(Math.pow(2, 1000));
+  number.toString().split('').forEach(((x) => result += parseInt(x, 10)));
+
+  return ["16# power digit sum", result];
+}

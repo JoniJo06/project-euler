@@ -23,6 +23,7 @@ import {
 	large_sum,
 	longest_collatz_sequence,
 	lattice_paths,
+	power_digit_sum,
 } from './11-20'
 
 const DEBUG = false;
@@ -76,6 +77,7 @@ const main = () => {
 		large_sum,
 		longest_collatz_sequence,
 		lattice_paths,
+		power_digit_sum,
   ];
 
 
