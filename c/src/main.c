@@ -38,8 +38,9 @@ void compare(int problem, long result) {
   fclose(file);
 }
 
-void (*problems[1])(retTuple *ret) = {
+void (*problems[])(retTuple *ret) = {
   multiples_of_3_or_5,
+  even_fibonacci_numbers,
   };
 
 int main(int argc, char **argv) {
