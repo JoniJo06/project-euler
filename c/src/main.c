@@ -75,11 +75,13 @@ int main(int argc, char **argv) {
   }
 
   retTuple tuple;
+  tuple.name = "unknown";
+  tuple.result = -1;
   problems[problem - 1](&tuple);
 
   printf("--------------------------------\n");
   printf("%s\n", tuple.name);
   printf("Result: %ld\n", tuple.result);
   printf("--------------------------------\n");
-
+  exit(EXIT_SUCCESS);
 }
