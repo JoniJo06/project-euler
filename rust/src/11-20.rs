@@ -1,16 +1,16 @@
 use num::BigUint;
 
 fn get_item_from_grid(grid: &Vec<Vec<u32>>, row: i32, col: i32) -> u32 {
-    if 0 <= row && row < grid.len() as i32 && 0 <= col && col < grid[row as usize].len() as i32 {
-        return grid[row as usize][col as usize];
-    }
-    0
+  if 0 <= row && row < grid.len() as i32 && 0 <= col && col < grid[row as usize].len() as i32 {
+    return grid[row as usize][col as usize];
+  }
+  0
 }
 
 pub fn largest_product_in_a_grid() -> (&'static str, i128) {
-    let mut result = 0;
+  let mut result = 0;
 
-    let grid = "08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
+  let grid = "08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00
 81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 03 49 13 36 65
 52 70 95 23 04 60 11 42 69 24 68 56 01 32 56 71 37 02 36 91
@@ -31,69 +31,69 @@ pub fn largest_product_in_a_grid() -> (&'static str, i128) {
 20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48";
 
-    let grid = grid.split('\n').collect::<Vec<&str>>();
-    let grid = grid
-        .iter()
-        .map(|x| {
-            x.split(' ')
-                .map(|y| y.parse::<u32>().unwrap())
-                .collect::<Vec<u32>>()
-        })
-        .collect::<Vec<Vec<u32>>>();
+  let grid = grid.split('\n').collect::<Vec<&str>>();
+  let grid = grid
+    .iter()
+    .map(|x| {
+      x.split(' ')
+        .map(|y| y.parse::<u32>().unwrap())
+        .collect::<Vec<u32>>()
+    })
+    .collect::<Vec<Vec<u32>>>();
 
-    for row in 0..grid.len() as i32 {
-        for col in 0..grid[0].len() as i32 {
-            let mut p1 = 1;
-            let mut p2 = 1;
-            let mut p3 = 1;
-            let mut p4 = 1;
+  for row in 0..grid.len() as i32 {
+    for col in 0..grid[0].len() as i32 {
+      let mut p1 = 1;
+      let mut p2 = 1;
+      let mut p3 = 1;
+      let mut p4 = 1;
 
-            for i in 0..4 {
-                p1 *= get_item_from_grid(&grid, row, col + i);
-                p2 *= get_item_from_grid(&grid, row + i, col);
-                p3 *= get_item_from_grid(&grid, row + i, col + i);
-                p4 *= get_item_from_grid(&grid, row + i, col - i);
-            }
-            let mut val = vec![p1, p2, p3, p4, result];
-            val.sort_unstable();
-            result = val[val.len() - 1];
-        }
+      for i in 0..4 {
+        p1 *= get_item_from_grid(&grid, row, col + i);
+        p2 *= get_item_from_grid(&grid, row + i, col);
+        p3 *= get_item_from_grid(&grid, row + i, col + i);
+        p4 *= get_item_from_grid(&grid, row + i, col - i);
+      }
+      let mut val = vec![p1, p2, p3, p4, result];
+      val.sort_unstable();
+      result = val[val.len() - 1];
     }
+  }
 
-    ("11# largest product in a grid", result as i128)
+  ("11# largest product in a grid", result as i128)
 }
 
 pub fn highly_divisible_triangular_number() -> (&'static str, i128) {
-    let n = 500;
+  let n = 500;
 
-    let mut i: u128 = 1;
-    let mut number = 0;
-    'main: loop {
-        number += i;
+  let mut i: u128 = 1;
+  let mut number = 0;
+  'main: loop {
+    number += i;
 
-        // println!("###########################");
-        // println!("Number: {}", number);
-        let mut divisible_count = 0;
+    // println!("###########################");
+    // println!("Number: {}", number);
+    let mut divisible_count = 0;
 
-        for j in 1..(number as f64).sqrt() as u128 + 1 {
-            if number % j == 0 {
-                divisible_count += 2;
-                // print!("{} ", j);
-            }
-        }
-        // println!();
-        // println!("Divisible Count: {}", divisible_count);
-        if divisible_count > n {
-            break 'main;
-        }
-        i += 1;
+    for j in 1..(number as f64).sqrt() as u128 + 1 {
+      if number % j == 0 {
+        divisible_count += 2;
+        // print!("{} ", j);
+      }
     }
+    // println!();
+    // println!("Divisible Count: {}", divisible_count);
+    if divisible_count > n {
+      break 'main;
+    }
+    i += 1;
+  }
 
-    ("12# highly divisible triangular numbers", number as i128)
+  ("12# highly divisible triangular numbers", number as i128)
 }
 
 pub fn large_sum() -> (&'static str, i128) {
-    let input = "37107287533902102798797998220837590246510135740250
+  let input = "37107287533902102798797998220837590246510135740250
 46376937677490009712648124896970078050417018260538
 74324986199524741059474233309513058123726617309629
 91942213363574161572522430563301811072406154908250
@@ -194,80 +194,80 @@ pub fn large_sum() -> (&'static str, i128) {
 20849603980134001723930671666823555245252804609722
 53503534226472524250874054075591789781264330331690";
 
-    let numbers = input
-        .split('\n')
-        .map(|x| BigUint::parse_bytes(x.as_bytes(), 10).unwrap())
-        .collect::<Vec<BigUint>>();
+  let numbers = input
+    .split('\n')
+    .map(|x| BigUint::parse_bytes(x.as_bytes(), 10).unwrap())
+    .collect::<Vec<BigUint>>();
 
-    let result_string = numbers
-        .iter()
-        .sum::<BigUint>()
-        .to_string()
-        .split("")
-        .collect::<String>();
+  let result_string = numbers
+    .iter()
+    .sum::<BigUint>()
+    .to_string()
+    .split("")
+    .collect::<String>();
 
-    let result = result_string[..10].parse::<i128>().unwrap();
+  let result = result_string[..10].parse::<i128>().unwrap();
 
-    ("13# large sum", result)
+  ("13# large sum", result)
 }
 
 pub fn longest_collatz_sequence() -> (&'static str, i128) {
-    let mut result: (u64, u64) = (0, 0);
+  let mut result: (u64, u64) = (0, 0);
 
-    for i in 0..1_000_000 {
-        let mut terms = 0;
-        let mut n = i;
-        while n > 1 {
-            if n % 2 == 0 {
-                n /= 2;
-            } else {
-                n = n * 3 + 1;
-            }
-            terms += 1;
-        }
-        if terms > result.1 {
-            result = (i, terms);
-        }
+  for i in 0..1_000_000 {
+    let mut terms = 0;
+    let mut n = i;
+    while n > 1 {
+      if n % 2 == 0 {
+        n /= 2;
+      } else {
+        n = n * 3 + 1;
+      }
+      terms += 1;
     }
+    if terms > result.1 {
+      result = (i, terms);
+    }
+  }
 
-    ("14# longest collatz sequence", result.0 as i128)
+  ("14# longest collatz sequence", result.0 as i128)
 }
 
 fn foo(memory: &mut Vec<Vec<u64>>, x: usize, y: usize) -> u64 {
-    if memory[x][y] != 0 {
-        return memory[x][y];
-    }
+  if memory[x][y] != 0 {
+    return memory[x][y];
+  }
 
-    if x == 0 && y == 0 {
-        return 0;
-    }
-    if x == 0 || y == 0 {
-        memory[x][y] = 1;
-        return memory[x][y];
-    }
-    memory[x][y] = foo(&mut *memory, x - 1, y) + foo(&mut *memory, x, y - 1);
-    memory[x][y]
+  if x == 0 && y == 0 {
+    return 0;
+  }
+  if x == 0 || y == 0 {
+    memory[x][y] = 1;
+    return memory[x][y];
+  }
+  memory[x][y] = foo(&mut *memory, x - 1, y) + foo(&mut *memory, x, y - 1);
+  memory[x][y]
 }
 
 pub fn lattice_paths() -> (&'static str, i128) {
-    let grid_size = 20;
-    let mut memory = vec![vec![0_u64; grid_size + 1]; grid_size + 1];
+  let grid_size = 20;
+  let mut memory = vec![vec![0_u64; grid_size + 1]; grid_size + 1];
 
-    let result = foo(&mut memory, grid_size, grid_size);
+  let result = foo(&mut memory, grid_size, grid_size);
 
-    ("15# lattice paths", result as i128)
+  ("15# lattice paths", result as i128)
 }
 
 pub fn power_digit_sum() -> (&'static str, i128) {
-    let mut result = 0;
+  let mut result = 0;
 
-    let number = BigUint::parse_bytes(b"2", 10).unwrap();
-    let number = number.pow(1000);
+  let number = BigUint::parse_bytes(b"2", 10).unwrap();
+  let number = number.pow(1000);
 
-    number
-        .to_string()
-        .chars()
-        .for_each(|x| result += x.to_string().parse::<u32>().unwrap());
+  number
+    .to_string()
+    .chars()
+    .for_each(|x| result += x.to_string().parse::<u32>().unwrap());
 
-    ("16# power digit sum", result as i128)
+  ("16# power digit sum", result as i128)
 }
