@@ -20,6 +20,7 @@ import {
 import {
 	largest_product_in_a_grid,
 	highly_divisible_triangular_number,
+	large_sum,
 } from './11-20'
 
 const DEBUG = false;
@@ -70,6 +71,7 @@ const main = () => {
 		// 11-20
 		largest_product_in_a_grid,
 		highly_divisible_triangular_number,
+		large_sum,
   ];
 
 
