@@ -251,5 +251,14 @@ void special_pythagorean_triplet(retTuple *ret) {
   ret->result = result;
 }
 void summation_of_primes(retTuple *ret) {
+  ret->name = "10# summation of primes";
+  
+  int result = 0;
 
+	for (int i = 0; i < 2000000; i++) {
+		if (isPrime(i))
+			result += i;
+	}
+
+  ret->result = result;
 }
