@@ -4,8 +4,6 @@
 
 #include "main.h"
 
-#define SOLVED true
-
 void compare(int problem, long result) {
   FILE *file;
   char line[255];
@@ -76,8 +74,5 @@ int main(int argc, char **argv) {
   printf("%s\n", tuple.name);
   printf("Result: %ld\n", tuple.result);
   printf("--------------------------------\n");
-
-  if (SOLVED) {
-    compare(problem, tuple.result);
-  }
+  
 }
