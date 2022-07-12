@@ -49,7 +49,6 @@ int main(int argc, char **argv) {
 
   if (argc < 1) {
     fprintf(stderr, "usage: %s <problem number>\n", program);
-    // std::cerr << "Usage: " << program << " <problem number>" << std::endl;
     exit(EXIT_FAILURE);
   }
 
@@ -61,7 +60,6 @@ int main(int argc, char **argv) {
   }
 
   if ((unsigned long) problem > sizeof(problems)/sizeof(problems[0])) {
-    // fprintf(stderr, "usage: %s <problem number>\n", program);
     fprintf(stderr, "problem out of range\n");
     fprintf(stderr, "try to access problem %d of %ld\n", problem, sizeof(problems)/sizeof(problems[0]));
     exit(EXIT_FAILURE);
@@ -74,5 +72,5 @@ int main(int argc, char **argv) {
   printf("%s\n", tuple.name);
   printf("Result: %ld\n", tuple.result);
   printf("--------------------------------\n");
-  
+
 }
