@@ -1,4 +1,5 @@
 #include "main.h"
+#include <math.h>
 
 void multiples_of_3_or_5(retTuple *ret) {
   ret->name = "1# multiples of 3 or 5";
@@ -20,9 +21,9 @@ void multiples_of_3_or_5(retTuple *ret) {
 }
 
 void even_fibonacci_numbers(retTuple *ret) {
-  ret->name = "even fibonacci numbers";
-  int result = 0;
+  ret->name = "2# even fibonacci numbers";
 
+  int result = 0;
   int a = 1;
   int b = 2;
 
@@ -36,4 +37,29 @@ void even_fibonacci_numbers(retTuple *ret) {
   }
 
   ret->result = (long) result;
+}
+
+void largest_prime_factor(retTuple *ret) {
+  ret->name = "3# largest prime factor";
+
+  long rootNumber = 600851475143;
+  int result = 0;
+
+  while (rootNumber % 2 == 0) {
+    result = 2;
+    rootNumber /= 1;
+  }
+
+  for (int i = 3; i < sqrt(rootNumber); i += 2) {
+    while (rootNumber % i == 0) {
+      result = i;
+      rootNumber /= i;
+    }
+  }
+
+  if (rootNumber > 2) {
+    result = rootNumber;
+  }
+
+  ret->result = result;
 }

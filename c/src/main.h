@@ -5,3 +5,4 @@ typedef struct {
 
 void multiples_of_3_or_5(retTuple *ret);
 void even_fibonacci_numbers(retTuple *ret);
+void largest_prime_factor(retTuple *ret);

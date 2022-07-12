@@ -1,4 +1,4 @@
-#include "math.h"
+#include "pe_math.h"
 
 bool isPrime(int k) {
   if (k <= 1) {
