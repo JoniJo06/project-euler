@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
 
 void multiples_of_3_or_5(retTuple *ret) {
   ret->name = "1# multiples of 3 or 5";
@@ -105,7 +106,25 @@ void largest_palindrome_product(retTuple *ret) {
   ret->result = result;
 }
 void smallest_multiple(retTuple *ret) {
+  ret->name = "5# smallest multiple";
 
+  int result = 0;
+  int n = 20;
+
+  while (true) {
+		bool dividable = true;
+		for (int i = 1; i <= 20; i++) {
+			if (n % i != 0) {
+				dividable = false;
+			}
+		}
+		if (dividable) {
+			result = n;
+			break;
+		}
+		n += 20;
+	}
+  ret->result = result;
 }
 void sum_square_difference(retTuple *ret) {
 
