@@ -210,7 +210,45 @@ void largest_product_in_a_series(retTuple *ret) {
     ret->result = result;
 }
 void special_pythagorean_triplet(retTuple *ret) {
+  ret->name = "9# special pythagorean triplet"; 
 
+  int result = 0;
+	int a = 0;
+	int b = 0;
+	int c = 0;
+
+	cLoop:
+	while (true) {
+		c++;
+		bLoop:
+		while (true) {
+			b++;
+			aLoop:
+			while (true) {
+				a++;
+				if (a >= b) {
+					a = 1;
+					goto bLoop;
+				}
+				if (b >= c) {
+					b = 1;
+					goto cLoop;
+				}
+
+				if (pow(a, 2) + pow(b, 2) != pow(c, 2)) {
+					goto aLoop;
+				}
+
+				if (a + b + c == 1000) {
+					result = a * b * c;
+					goto after;
+				}
+			}
+		}
+	}
+  after:
+
+  ret->result = result;
 }
 void summation_of_primes(retTuple *ret) {
 
