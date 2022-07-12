@@ -19,6 +19,7 @@ import {
 
 import {
 	largest_product_in_a_grid,
+	highly_divisible_triangular_number,
 } from './11-20'
 
 const DEBUG = false;
@@ -68,6 +69,7 @@ const main = () => {
 		summation_of_primes,
 		// 11-20
 		largest_product_in_a_grid,
+		highly_divisible_triangular_number,
   ];
 
 

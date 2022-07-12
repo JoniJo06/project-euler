@@ -55,3 +55,29 @@ export const largest_product_in_a_grid = (): [string, number] => {
 
   return ['11# largest product in a grid', result];
 }
+
+export const highly_divisible_triangular_number = (): [string, number] => {
+  let n: number = 500;
+
+  let i: number = 1;
+  let number: number = 0;
+  while (true) {
+    number += i;
+
+    let divisible_count: number = 0;
+
+    for (let j = 1; j < Math.sqrt(number) + 1; j++) {
+      if (number % j == 0) {
+        divisible_count += 2;
+      }
+    }
+
+    if (divisible_count > n) {
+      break;
+    }
+
+    i++
+  }
+
+  return ["12# highly divisible triangular numbers", number];
+}
