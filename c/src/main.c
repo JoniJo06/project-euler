@@ -1,7 +1,44 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+
 #include "main.h"
+
+#define SOLVED true
+
+void compare(int problem, long result) {
+  FILE *file;
+  char line[255];
+  int lines = 0;
+  file = fopen("./../results.txt", "r");
+  if (file == NULL) {
+    exit(EXIT_FAILURE);
+  }
+
+  while (fgets(line, sizeof(line), file) != NULL) {
+    lines++;
+  }
+
+  if (lines <= problem) {
+    fprintf(stderr, "Does not exist in results.txt\n");
+    return;
+  }
+
+  file = fopen("./../results.txt", "r");
+
+  int i = 1;
+  while (fgets(line, sizeof(line), file) != NULL) {
+    if (i == problem)
+      break;
+    i++;
+  }
+
+  if (atoi(line) != result) {
+    fprintf(stderr, "This answer is incorrect!\n");
+    exit(EXIT_FAILURE);
+  }
+  fclose(file);
+}
 
 void (*problems[1])(retTuple *ret) = {
   multiples_of_3_or_5,
@@ -40,4 +77,7 @@ int main(int argc, char **argv) {
   printf("Result: %ld\n", tuple.result);
   printf("--------------------------------\n");
 
+  if (SOLVED) {
+    compare(problem, tuple.result);
+  }
 }
