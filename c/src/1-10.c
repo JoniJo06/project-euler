@@ -127,7 +127,24 @@ void smallest_multiple(retTuple *ret) {
   ret->result = result;
 }
 void sum_square_difference(retTuple *ret) {
+  ret->name = "6# sum square difference";
+  int n = 100;
+  int sum_square = 0;
 
+	for (int i = 1; i <= n; i++) {
+		sum_square += pow(i, 2);
+	}
+
+	int square_sum = 0;
+	for (int i = 1; i <= n; i++) {
+		square_sum += i;
+	}
+
+	square_sum = pow(square_sum, 2);
+
+	int result = square_sum - sum_square;
+
+	ret->result = result;
 }
 void _10001st_prime(retTuple *ret) {
 

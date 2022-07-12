@@ -44,6 +44,11 @@ void (*problems[])(retTuple *ret) = {
   largest_prime_factor,
   largest_palindrome_product,
   smallest_multiple,
+  sum_square_difference,
+  _10001st_prime,
+  largest_product_in_a_series,
+  special_pythagorean_triplet,
+  summation_of_primes,
   };
 
 int main(int argc, char **argv) {
