@@ -1,0 +1,6 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/jonijo06/programming/jonijo06/project-euler'
+make: Leaving directory '/home/jonijo06/programming/jonijo06/project-euler'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+
