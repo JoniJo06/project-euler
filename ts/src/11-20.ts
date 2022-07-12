@@ -212,3 +212,11 @@ export const longest_collatz_sequence = (): [string, number] => {
 
   return ['14# longest collatz sequence', result[0]];
 }
+
+export const lattice_paths = (): [string, number] => {
+  let result: number = 1;
+  for (let i = 1; i <= 20; i++) {
+    result = result * (20 + i) / i
+  }
+  return ["15# lattice paths", result];
+}

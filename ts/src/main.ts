@@ -22,6 +22,7 @@ import {
 	highly_divisible_triangular_number,
 	large_sum,
 	longest_collatz_sequence,
+	lattice_paths,
 } from './11-20'
 
 const DEBUG = false;
@@ -74,6 +75,7 @@ const main = () => {
 		highly_divisible_triangular_number,
 		large_sum,
 		longest_collatz_sequence,
+		lattice_paths,
   ];
 
 
@@ -98,4 +100,5 @@ const main = () => {
 		console.log("ms elapsed: " + timeElapsed);
 	}
 };
+
 main();
