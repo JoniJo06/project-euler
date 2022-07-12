@@ -42,6 +42,7 @@ void (*problems[])(retTuple *ret) = {
   multiples_of_3_or_5,
   even_fibonacci_numbers,
   largest_prime_factor,
+  largest_palindrome_product,
   };
 
 int main(int argc, char **argv) {

@@ -1,5 +1,8 @@
 #include "main.h"
 #include <math.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
 void multiples_of_3_or_5(retTuple *ret) {
   ret->name = "1# multiples of 3 or 5";
@@ -62,4 +65,60 @@ void largest_prime_factor(retTuple *ret) {
   }
 
   ret->result = result;
+}
+
+void reverse(char *x, int begin, int end)
+{
+  char c;
+
+  if (begin >= end)
+      return;
+
+  c          = *(x+begin);
+  *(x+begin) = *(x+end);
+  *(x+end)   = c;
+
+  reverse(x, ++begin, --end);
+}
+
+void largest_palindrome_product(retTuple *ret) {
+  ret->name = "4# largest palindrome product";
+
+  int result = 0;
+
+  for (int i = 999; i > 100; i--) {
+    for (int j = 999; j > 100; j--) {
+      int product = i * j;
+      char productString[(int)log10(product) + 1];
+      sprintf(productString, "%ld", (long)product);
+      reverse(productString, 0, strlen(productString)-1);
+
+      int rev_product = atoi(productString);
+      if (product == rev_product) {
+        result = product;
+        goto after;
+      }
+    }
+  }
+  after:
+
+  ret->result = result;
+}
+void smallest_multiple(retTuple *ret) {
+
+}
+void sum_square_difference(retTuple *ret) {
+
+}
+void _10001st_prime(retTuple *ret) {
+
+}
+void largest_product_in_a_series(retTuple *ret) {
+
+}
+void special_pythagorean_triplet(retTuple *ret) {
+
+}
+void summation_of_primes(retTuple *ret) {
+
 }
