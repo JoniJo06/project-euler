@@ -31,7 +31,7 @@ void compare(int problem, long result) {
     i++;
   }
 
-  if (atoi(line) != result) {
+  if (atol(line) != result) {
     fprintf(stderr, "This answer is incorrect!\n");
     exit(EXIT_FAILURE);
   }
@@ -39,6 +39,7 @@ void compare(int problem, long result) {
 }
 
 void (*problems[])(retTuple *ret) = {
+  // 1-10
   multiples_of_3_or_5,
   even_fibonacci_numbers,
   largest_prime_factor,
@@ -49,6 +50,13 @@ void (*problems[])(retTuple *ret) = {
   largest_product_in_a_series,
   special_pythagorean_triplet,
   summation_of_primes,
+  // 11-20
+  largest_product_in_a_grid,
+  highly_divisible_triangular_number,
+  large_sum,
+  longest_collatz_sequence,
+  lattice_paths,
+  power_digit_sum,
   };
 
 int main(int argc, char **argv) {
@@ -83,5 +91,6 @@ int main(int argc, char **argv) {
   printf("%s\n", tuple.name);
   printf("Result: %ld\n", tuple.result);
   printf("--------------------------------\n");
+  compare(problem, tuple.result);
   exit(EXIT_SUCCESS);
 }
