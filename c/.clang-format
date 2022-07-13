@@ -1,1 +1,8 @@
+# @format
+
 IndentWidth: 2
+
+Language: Cpp
+ColumnLimit: 100
+---
+
