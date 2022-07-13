@@ -89,21 +89,19 @@ void largest_palindrome_product(retTuple *ret) {
 
   int result = 0;
 
-  for (int i = 999; i > 100; i--) {
-    for (int j = 999; j > 100; j--) {
+  for (int i = 100; i < 999; i++) {
+    for (int j = 100; j < 999; j++) {
       int product = i * j;
       char productString[(int)log10(product) + 1];
       sprintf(productString, "%ld", (long)product);
       reverse(productString, 0, strlen(productString)-1);
 
       int rev_product = atoi(productString);
-      if (product == rev_product) {
+      if (product == rev_product && product > result) {
         result = product;
-        goto after;
       }
     }
   }
-  after:
 
   ret->result = (long) result;
 }
