@@ -52,11 +52,11 @@ void (*problems[])(retTuple *ret) = {
   summation_of_primes,
   // 11-20
   largest_product_in_a_grid,
-  // highly_divisible_triangular_number,
-  // large_sum,
-  // longest_collatz_sequence,
-  // lattice_paths,
-  // power_digit_sum,
+  highly_divisible_triangular_number,
+  large_sum,
+  longest_collatz_sequence,
+  lattice_paths,
+  power_digit_sum,
   };
 
 int main(int argc, char **argv) {

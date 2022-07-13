@@ -1,4 +1,5 @@
-#include <gmp.h>
+#include <math.h>
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -8,13 +9,6 @@
 #define GRID_SIZE 20
 
 static int max(int a, int b) { return a > b ? a : b; }
-
-static int get_item_from_grid(int numbers[GRID_SIZE][GRID_SIZE], int row, int col) {
-  if (0 <= row && row < GRID_SIZE && 0 <= col && col < GRID_SIZE) {
-    return numbers[row][col];
-  }
-  return 0;
-}
 
 #define GRID_SIZE 20
 
@@ -62,18 +56,33 @@ void largest_product_in_a_grid(retTuple *ret) {
 
 #undef GRID_SIZE
 
-// void highly_divisible_triangular_number(retTuple *ret) {
+void highly_divisible_triangular_number(retTuple *ret) {
+  ret->name = "12# highly_divisible_triangular_number";
 
-// }
-// void large_sum(retTuple *ret) {
+  int n = 500;
+  int i = 1;
+  int number = 0;
 
-// }
-// void longest_collatz_sequence(retTuple *ret) {
+  while (true) {
+    number += i;
 
-// }
-// void lattice_paths(retTuple *ret) {
+    int divisible_count = 0;
 
-// }
-// void power_digit_sum(retTuple *ret) {
+    for (int j = 1; j < sqrt(number) + 1; j++) {
+      if (number % j == 0) {
+        divisible_count += 2;
+      }
+    }
 
-// }
+    if (divisible_count > n) {
+      break;
+    }
+    i++;
+  }
+
+  ret->result = (long)number;
+}
+void large_sum(retTuple *ret) {}
+void longest_collatz_sequence(retTuple *ret) {}
+void lattice_paths(retTuple *ret) {}
+void power_digit_sum(retTuple *ret) {}
