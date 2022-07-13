@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <gmp.h>
 
 #include "main.h"
 #include "pe/pe_math.h"
@@ -188,15 +189,15 @@ void large_sum(retTuple *ret) {
                    "53503534226472524250874054075591789781264330331690"};
 
   char *buffer = input[0];
-  for (int i = 1; i < sizeof(input) / sizeof(input[0]); i++) {
+  for (int i = 1; i < (int)(sizeof(input) / sizeof(input[0])); i++) {
     // fprintf(stdout, "%s\n", input[i]);
     buffer = math_add_str(buffer, input[i]);
   }
 
   char *result[32];
-  sprintf(result, "%.*s", 10, buffer);
+  sprintf(*result, "%.*s", 10, buffer);
 
-  ret->result = atol(result);
+  ret->result = atol(*result);
 }
 void longest_collatz_sequence(retTuple *ret) {
   ret->name = "14# longest collatz sequence";
@@ -234,4 +235,23 @@ void lattice_paths(retTuple *ret) {
 
   ret->result = result;
 }
-void power_digit_sum(retTuple *ret) {}
+void power_digit_sum(retTuple *ret) {
+  ret->name = "16# power digit sum";
+
+  int result = 0;
+
+  mpz_t number;
+  char str[302 + 2];
+
+  mpz_init2(number, 1001);
+  mpz_ui_pow_ui(number, 2, 1000);
+  mpz_get_str(str, 10, number);
+
+  // printf("%s", str);
+
+  for (int i = 0; i < (int)strlen(str); i++) {
+    result += str[i] - '0';
+  }
+
+  ret->result = (long)result;
+}
