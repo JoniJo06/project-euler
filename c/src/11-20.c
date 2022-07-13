@@ -58,7 +58,7 @@ void largest_product_in_a_grid(retTuple *ret) {
 #undef GRID_SIZE
 
 void highly_divisible_triangular_number(retTuple *ret) {
-  ret->name = "12# highly_divisible_triangular_number";
+  ret->name = "12# highly divisible triangular number";
 
   int n = 500;
   int i = 1;
@@ -84,7 +84,7 @@ void highly_divisible_triangular_number(retTuple *ret) {
   ret->result = (long)number;
 }
 void large_sum(retTuple *ret) {
-  ret->name = "13# large_sum";
+  ret->name = "13# large sum";
 
   char *input[] = {"37107287533902102798797998220837590246510135740250",
                    "46376937677490009712648124896970078050417018260538",
@@ -198,6 +198,31 @@ void large_sum(retTuple *ret) {
 
   ret->result = atol(result);
 }
-void longest_collatz_sequence(retTuple *ret) {}
+void longest_collatz_sequence(retTuple *ret) {
+  ret->name = "14# longest collatz sequence";
+
+  typedef struct {
+    int a;
+    int b;
+  } tuple;
+
+  tuple result = {0, 0};
+
+  for (int i = 0; i < 1000000; i++) {
+    int terms = 0;
+    long n = i;
+    while (n > 1) {
+      if (n % 2 == 0)
+        n /= 2;
+      else
+        n = n * 3 + 1;
+      terms++;
+    }
+    if (terms > result.b)
+      result = (tuple){ i, terms };
+  }
+
+  ret->result = (long)result.a;
+}
 void lattice_paths(retTuple *ret) {}
 void power_digit_sum(retTuple *ret) {}
