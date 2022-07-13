@@ -224,5 +224,14 @@ void longest_collatz_sequence(retTuple *ret) {
 
   ret->result = (long)result.a;
 }
-void lattice_paths(retTuple *ret) {}
+void lattice_paths(retTuple *ret) { 
+  ret->name = "15# lattice paths";
+
+  long result = 1;
+  for (int i = 1; i <= 20; i++) {
+    result = result * (20 + i) / i;
+  }
+
+  ret->result = result;
+}
 void power_digit_sum(retTuple *ret) {}
