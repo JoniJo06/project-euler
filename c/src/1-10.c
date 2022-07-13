@@ -67,7 +67,7 @@ void largest_prime_factor(retTuple *ret) {
     result = rootNumber;
   }
 
-  ret->result = result;
+  ret->result = (long) result;
 }
 
 void reverse(char *x, int begin, int end)
@@ -105,7 +105,7 @@ void largest_palindrome_product(retTuple *ret) {
   }
   after:
 
-  ret->result = result;
+  ret->result = (long) result;
 }
 void smallest_multiple(retTuple *ret) {
   ret->name = "5# smallest multiple";
@@ -126,7 +126,7 @@ void smallest_multiple(retTuple *ret) {
 		}
 		n += 20;
 	}
-  ret->result = result;
+  ret->result = (long) result;
 }
 void sum_square_difference(retTuple *ret) {
   ret->name = "6# sum square difference";
@@ -146,7 +146,7 @@ void sum_square_difference(retTuple *ret) {
 
 	int result = square_sum - sum_square;
 
-	ret->result = result;
+	ret->result = (long) result;
 }
 void _10001st_prime(retTuple *ret) {
   ret->name = "7# 10001st prime";
@@ -163,7 +163,7 @@ void _10001st_prime(retTuple *ret) {
 	}
 	i--;
 
-  ret->result = i;
+  ret->result = (long) i;
 }
 void largest_product_in_a_series(retTuple *ret) {
   ret->name = "8# largest product in a series";
@@ -207,7 +207,7 @@ void largest_product_in_a_series(retTuple *ret) {
 		}
   }
 
-    ret->result = result;
+    ret->result = (long) result;
 }
 void special_pythagorean_triplet(retTuple *ret) {
   ret->name = "9# special pythagorean triplet"; 
@@ -248,7 +248,7 @@ void special_pythagorean_triplet(retTuple *ret) {
 	}
   after:
 
-  ret->result = result;
+  ret->result = (long) result;
 }
 void summation_of_primes(retTuple *ret) {
   ret->name = "10# summation of primes";
@@ -260,5 +260,5 @@ void summation_of_primes(retTuple *ret) {
 			result += i;
 	}
 
-  ret->result = result;
+  ret->result = (long) result;
 }
