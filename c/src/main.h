@@ -16,8 +16,8 @@ void special_pythagorean_triplet(retTuple *ret);
 void summation_of_primes(retTuple *ret);
 // 11-20
 void largest_product_in_a_grid(retTuple *ret);
-void highly_divisible_triangular_number(retTuple *ret);
-void large_sum(retTuple *ret);
-void longest_collatz_sequence(retTuple *ret);
-void lattice_paths(retTuple *ret);
-void power_digit_sum(retTuple *ret);
+// void highly_divisible_triangular_number(retTuple *ret);
+// void large_sum(retTuple *ret);
+// void longest_collatz_sequence(retTuple *ret);
+// void lattice_paths(retTuple *ret);
+// void power_digit_sum(retTuple *ret);
