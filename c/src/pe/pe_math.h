@@ -3,7 +3,9 @@
 
 #include <stdbool.h>
 
+#define MATH_STRING_LIMIT 255
+
 bool isPrime(int k);
-void math_add_str(char *a, char *b, char *dst);
+char *math_add_str(char *a, char *b);
 
 #endif // __PROJECT_EULER_MATH_H

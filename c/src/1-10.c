@@ -1,11 +1,12 @@
-#include "main.h"
 #include <math.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
 
-#include "pe_math.h"
+#include "main.h"
+#include "pe/pe_math.h"
+#include "pe/pe_string.h"
 
 void multiples_of_3_or_5(retTuple *ret) {
   ret->name = "1# multiples of 3 or 5";
@@ -70,19 +71,7 @@ void largest_prime_factor(retTuple *ret) {
   ret->result = (long) result;
 }
 
-void reverse(char *x, int begin, int end)
-{
-  char c;
 
-  if (begin >= end)
-      return;
-
-  c          = *(x+begin);
-  *(x+begin) = *(x+end);
-  *(x+end)   = c;
-
-  reverse(x, ++begin, --end);
-}
 
 void largest_palindrome_product(retTuple *ret) {
   ret->name = "4# largest palindrome product";
@@ -93,8 +82,8 @@ void largest_palindrome_product(retTuple *ret) {
     for (int j = 100; j < 999; j++) {
       int product = i * j;
       char productString[(int)log10(product) + 1];
-      sprintf(productString, "%ld", (long)product);
-      reverse(productString, 0, strlen(productString)-1);
+      sprintf(productString, "%d", product);
+      string_reverse(productString, 0, strlen(productString)-1);
 
       int rev_product = atoi(productString);
       if (product == rev_product && product > result) {

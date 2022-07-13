@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <string.h>
 
 #include "main.h"
+#include "pe/pe_math.h"
 
 void compare(int problem, long result) {
   FILE *file;
@@ -81,6 +83,14 @@ int main(int argc, char **argv) {
     fprintf(stderr, "try to access problem %d of %ld\n", problem, sizeof(problems)/sizeof(problems[0]));
     exit(EXIT_FAILURE);
   }
+
+  char *test = math_add_str("11111111111111111111111111", "-111111111111111111111111111");
+  fprintf(stdout, "result: %s\n", test);
+
+  // if (strcmp(test, "1998")) {
+    // fprintf(stdout, "try again\n");
+    // exit(EXIT_FAILURE);
+  // }
 
   retTuple tuple;
   tuple.name = "unknown";
