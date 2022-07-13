@@ -72,8 +72,8 @@ char *math_add_str(char *a, char *b) {
       if (position < largest_string) {
         int num1 = position < len_a ? a_reverse[position] - '0' : 0;
         int num2 = position < len_b ? b_reverse[position] - '0' : 0;
-        fprintf(stdout, "---------\nnum1: %d\n", num1);
-        fprintf(stdout, "num2: %d\n", num2);
+        // fprintf(stdout, "---------\nnum1: %d\n", num1);
+        // fprintf(stdout, "num2: %d\n", num2);
         int result = num1 + num2 + num_save;
         if (result >= 10) {
           num_save = 1;

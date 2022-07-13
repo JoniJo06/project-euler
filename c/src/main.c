@@ -84,14 +84,6 @@ int main(int argc, char **argv) {
     exit(EXIT_FAILURE);
   }
 
-  char *test = math_add_str("11111111111111111111111111", "-111111111111111111111111111");
-  fprintf(stdout, "result: %s\n", test);
-
-  // if (strcmp(test, "1998")) {
-    // fprintf(stdout, "try again\n");
-    // exit(EXIT_FAILURE);
-  // }
-
   retTuple tuple;
   tuple.name = "unknown";
   tuple.result = -1;
