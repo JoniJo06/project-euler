@@ -1,4 +1,4 @@
-import { exit } from "process";
+import { number_to_english } from "./math";
 
 const get_item_from_grid = (grid: number[][], row: number, col: number): number => {
     if (0 <= row && row < grid.length && 0 <= col && col < grid[row].length) {
@@ -228,4 +228,13 @@ export const power_digit_sum = (): [string, number] => {
   number.toString().split('').forEach(((x) => result += parseInt(x, 10)));
 
   return ["16# power digit sum", result];
+}
+
+export const number_letter_counts = (): [string, number] => {
+  let result: number = 0;
+
+  for (let i = 0; i < 1000; i++) 
+    result += number_to_english(i + 1).replace(/ /g, '').replace("-", "").length;
+
+  return ["17# number letter counts", result];
 }
