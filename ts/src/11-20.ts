@@ -1,16 +1,20 @@
-import { number_to_english } from "./math";
+/** @format */
+
+import fs from 'fs-extra'
+
+import { number_to_english } from './math';
 
 const get_item_from_grid = (grid: number[][], row: number, col: number): number => {
-    if (0 <= row && row < grid.length && 0 <= col && col < grid[row].length) {
-        return grid[row][col];
-    }
-  return 0;
-}
+	if (0 <= row && row < grid.length && 0 <= col && col < grid[row].length) {
+		return grid[row][col];
+	}
+	return 0;
+};
 
 export const largest_product_in_a_grid = (): [string, number] => {
-  let result: number = 0;
+	let result: number = 0;
 
-  let gridRaw: string = `08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
+	let gridRaw: string = `08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00
 81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 03 49 13 36 65
 52 70 95 23 04 60 11 42 69 24 68 56 01 32 56 71 37 02 36 91
@@ -29,61 +33,60 @@ export const largest_product_in_a_grid = (): [string, number] => {
 04 42 16 73 38 25 39 11 24 94 72 18 08 46 29 32 40 62 76 36
 20 69 36 41 72 30 23 88 34 62 99 69 82 67 59 85 74 04 36 16
 20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
-01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48`
+01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48`;
 
-  let grid = gridRaw.split('\n').map((x) => x.split(' ').map(Number));
-  
-  for (let row = 0; row < grid.length; row++) {
-    for (let col = 0; col < grid[0].length; col++) {
-      let p1: number = 1;
-      let p2: number = 1;
-      let p3: number = 1;
-      let p4: number = 1;
+	let grid = gridRaw.split('\n').map((x) => x.split(' ').map(Number));
 
+	for (let row = 0; row < grid.length; row++) {
+		for (let col = 0; col < grid[0].length; col++) {
+			let p1: number = 1;
+			let p2: number = 1;
+			let p3: number = 1;
+			let p4: number = 1;
 
-      for (let i = 0; i < 4; i++) {
-        p1 *= get_item_from_grid(grid, row, col + i);
-        p2 *= get_item_from_grid(grid, row + i, col);
-        p3 *= get_item_from_grid(grid, row + i, col + i);
-        p4 *= get_item_from_grid(grid, row + i, col - i);
-      }
-      let val = [p1, p2, p3, p4, result];
-      val.sort((a, b) => a - b);
-      result = val[val.length - 1];
-    }
-  }
+			for (let i = 0; i < 4; i++) {
+				p1 *= get_item_from_grid(grid, row, col + i);
+				p2 *= get_item_from_grid(grid, row + i, col);
+				p3 *= get_item_from_grid(grid, row + i, col + i);
+				p4 *= get_item_from_grid(grid, row + i, col - i);
+			}
+			let val = [p1, p2, p3, p4, result];
+			val.sort((a, b) => a - b);
+			result = val[val.length - 1];
+		}
+	}
 
-  return ['11# largest product in a grid', result];
-}
+	return ['11# largest product in a grid', result];
+};
 
 export const highly_divisible_triangular_number = (): [string, number] => {
-  let n: number = 500;
+	let n: number = 500;
 
-  let i: number = 1;
-  let number: number = 0;
-  while (true) {
-    number += i;
+	let i: number = 1;
+	let number: number = 0;
+	while (true) {
+		number += i;
 
-    let divisible_count: number = 0;
+		let divisible_count: number = 0;
 
-    for (let j = 1; j < Math.sqrt(number) + 1; j++) {
-      if (number % j == 0) {
-        divisible_count += 2;
-      }
-    }
+		for (let j = 1; j < Math.sqrt(number) + 1; j++) {
+			if (number % j == 0) {
+				divisible_count += 2;
+			}
+		}
 
-    if (divisible_count > n) {
-      break;
-    }
+		if (divisible_count > n) {
+			break;
+		}
 
-    i++
-  }
+		i++;
+	}
 
-  return ["12# highly divisible triangular numbers", number];
-}
+	return ['12# highly divisible triangular numbers', number];
+};
 
 export const large_sum = (): [string, number] => {
-  let input: string = `37107287533902102798797998220837590246510135740250
+	let input: string = `37107287533902102798797998220837590246510135740250
 46376937677490009712648124896970078050417018260538
 74324986199524741059474233309513058123726617309629
 91942213363574161572522430563301811072406154908250
@@ -182,59 +185,81 @@ export const large_sum = (): [string, number] => {
 77158542502016545090413245809786882778948721859617
 72107838435069186155435662884062257473692284509516
 20849603980134001723930671666823555245252804609722
-53503534226472524250874054075591789781264330331690`
-  
-  let numbers: bigint[] = input.split('\n').map(BigInt);
+53503534226472524250874054075591789781264330331690`;
 
-  
-  let resultString: string = numbers.reduce((a, b) => a + b).toString()
-  let result: number = Number(resultString.slice(0, 10));
+	let numbers: bigint[] = input.split('\n').map(BigInt);
 
-  return ['13# large sum', result];
-}
+	let resultString: string = numbers.reduce((a, b) => a + b).toString();
+	let result: number = Number(resultString.slice(0, 10));
+
+	return ['13# large sum', result];
+};
 
 export const longest_collatz_sequence = (): [string, number] => {
-  let result: [number, number] = [0, 0]
+	let result: [number, number] = [0, 0];
 
-  for (let i = 0; i < 1_000_000; i++) {
-    let terms: number = 0;
-    let n: number = i;
-    while (n > 1) {
-      if (n % 2 == 0)
-        n /= 2;
-      else
-        n = n * 3 + 1;
-      terms++;
-    }
-    if (terms > result[1])
-      result = [i, terms];
-  }
+	for (let i = 0; i < 1_000_000; i++) {
+		let terms: number = 0;
+		let n: number = i;
+		while (n > 1) {
+			if (n % 2 == 0) n /= 2;
+			else n = n * 3 + 1;
+			terms++;
+		}
+		if (terms > result[1]) result = [i, terms];
+	}
 
-  return ['14# longest collatz sequence', result[0]];
-}
+	return ['14# longest collatz sequence', result[0]];
+};
 
 export const lattice_paths = (): [string, number] => {
-  let result: number = 1;
-  for (let i = 1; i <= 20; i++) {
-    result = result * (20 + i) / i
-  }
-  return ["15# lattice paths", result];
-}
+	let result: number = 1;
+	for (let i = 1; i <= 20; i++) {
+		result = (result * (20 + i)) / i;
+	}
+	return ['15# lattice paths', result];
+};
 
 export const power_digit_sum = (): [string, number] => {
-  let result: number = 0;
+	let result: number = 0;
 
-  let number: bigint = BigInt(Math.pow(2, 1000));
-  number.toString().split('').forEach(((x) => result += parseInt(x, 10)));
+	let number: bigint = BigInt(Math.pow(2, 1000));
+	number
+		.toString()
+		.split('')
+		.forEach((x) => (result += parseInt(x, 10)));
 
-  return ["16# power digit sum", result];
-}
+	return ['16# power digit sum', result];
+};
 
 export const number_letter_counts = (): [string, number] => {
-  let result: number = 0;
+	let result: number = 0;
 
-  for (let i = 0; i < 1000; i++) 
-    result += number_to_english(i + 1).replace(/ /g, '').replace("-", "").length;
+	for (let i = 0; i < 1000; i++)
+		result += number_to_english(i + 1)
+			.replace(/ /g, '')
+			.replace('-', '').length;
 
-  return ["17# number letter counts", result];
+	return ['17# number letter counts', result];
+};
+
+const calcPath = (triangle: number[][]): number => {
+	for (let row = triangle.length - 2; row >= 0; row--){
+		for (let col = 0; col <= row; col++) {
+			triangle[row][col] += Math.max(triangle[row + 1][col], triangle[row + 1][col + 1]);
+		}
+	}
+	return triangle[0][0];
 }
+
+export const maximum_path_sum_I = (): [string, number] => {
+	let result: number = 0;
+	
+  
+  const input: string = fs.readFileSync('./../inputs/18.txt', 'utf8');
+	const triangle: number[][] = input.split('\n').map((x) => x.split(' ').map(Number));
+
+	result = calcPath(triangle);
+
+	return ['18# maximum path sum I', result];
+};

@@ -25,7 +25,10 @@ import {
 	lattice_paths,
 	power_digit_sum,
 	number_letter_counts,
-} from './11-20'
+	maximum_path_sum_I,
+} from './11-20';
+
+import { maximum_path_sum_II } from './61-70';
 
 const DEBUG = false;
 const SOLVED = true;
@@ -33,8 +36,8 @@ const SOLVED = true;
 const compare = (n: number, result: string | number) => {
 	let rawInput: string = fs.readFileSync('./../results.txt', 'utf8').toString();
 	let results: (number | string)[] = rawInput.split('\n').map(Number);
-  results.unshift(0);
-  if (results.length < n) return;
+	results.unshift(0);
+	if (results.length <= n) return;
 	equal(result, results[n]);
 };
 
@@ -49,7 +52,7 @@ const main = () => {
 		exit(1);
 	}
 
-	if (DEBUG) console.log("command line arguments " + argv);
+	if (DEBUG) console.log('command line arguments ' + argv);
 
 	// @ts-ignore-next-line
 	const problem: number = parseInt(argv.shift(), 10);
@@ -62,8 +65,8 @@ const main = () => {
 
 	let problems: Function[] = [
 		// 1-10
-    multiples_of_3_or_5,
-    even_fibonacci_numbers,
+		multiples_of_3_or_5,
+		even_fibonacci_numbers,
 		largest_prime_factor,
 		largest_palindrome_product,
 		smallest_multiple,
@@ -80,28 +83,30 @@ const main = () => {
 		lattice_paths,
 		power_digit_sum,
 		number_letter_counts,
-  ];
+		maximum_path_sum_I,
+		// 61-70
+		maximum_path_sum_II,
+	];
 
-
-  if (problem > problems.length) {
-    console.error("problem out of range");
-    console.error("try to access problem " + problem + " of " + problems.length)
-    exit(1);
-  }
+	if (problem > problems.length) {
+		console.error('problem out of range');
+		console.error('try to access problem ' + problem + ' of ' + problems.length);
+		exit(1);
+	}
 
 	let [name, result]: [string, number] = problems[problem - 1].call(this);
 
-	console.log("-----------------------")
-	console.log(name)
+	console.log('-----------------------');
+	console.log(name);
 	console.log('Result: ' + result);
-	console.log("-----------------------")
+	console.log('-----------------------');
 	if (SOLVED) compare(problem, result);
 
 	let endTime = new Date();
 	let timeElapsed = endTime.getTime() - startTime.getTime();
 	if (DEBUG) {
 		console.log(problem);
-		console.log("ms elapsed: " + timeElapsed);
+		console.log('ms elapsed: ' + timeElapsed);
 	}
 };
 
