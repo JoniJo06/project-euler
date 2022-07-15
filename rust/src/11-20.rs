@@ -296,7 +296,7 @@ fn calc_path(triangle: &mut Vec<Vec<u64>>)-> u64 {
       triangle[row][col] += cmp::max(triangle[row + 1][col], triangle[row + 1][col + 1]);
     }
   }
-	return triangle[0][0];
+	triangle[0][0]
 }
 
 pub fn maximum_path_sum_1() -> (&'static str, i128){
@@ -313,7 +313,7 @@ pub fn maximum_path_sum_1() -> (&'static str, i128){
     .map(|line| {
       line
         .unwrap()
-        .split(" ")
+        .split(' ')
         .map(|x| {
           x
             .to_string()
