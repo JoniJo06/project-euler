@@ -26,6 +26,7 @@ import {
 	power_digit_sum,
 	number_letter_counts,
 	maximum_path_sum_I,
+	counting_sundays,
 } from './11-20';
 
 import { maximum_path_sum_II } from './61-70';
@@ -84,8 +85,9 @@ const main = () => {
 		power_digit_sum,
 		number_letter_counts,
 		maximum_path_sum_I,
+		counting_sundays,
 		// 61-70
-		maximum_path_sum_II,
+		// maximum_path_sum_II,
 	];
 
 	if (problem > problems.length) {

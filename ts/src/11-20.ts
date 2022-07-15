@@ -2,7 +2,8 @@
 
 import fs from 'fs-extra'
 
-import { number_to_english } from './math';
+import { WeekdayEnum, MonthEnum } from './math'; 
+import * as math from './math';
 
 const get_item_from_grid = (grid: number[][], row: number, col: number): number => {
 	if (0 <= row && row < grid.length && 0 <= col && col < grid[row].length) {
@@ -236,7 +237,7 @@ export const number_letter_counts = (): [string, number] => {
 	let result: number = 0;
 
 	for (let i = 0; i < 1000; i++)
-		result += number_to_english(i + 1)
+		result += math.number_to_english(i + 1)
 			.replace(/ /g, '')
 			.replace('-', '').length;
 
@@ -263,3 +264,16 @@ export const maximum_path_sum_I = (): [string, number] => {
 
 	return ['18# maximum path sum I', result];
 };
+
+export const counting_sundays = (): [string, number] => {
+	let result: number = 0;
+
+	for (let year = 1901; year < 2001; year++) {
+		for (let month = 0; month < MonthEnum.length; month++) {
+			let day = new Date(MonthEnum[month] + " 2, " + year);
+			if (day.getDay() === WeekdayEnum.Sun)
+				result++;
+		}
+	}
+	return ['19# counting sundays', result];
+}

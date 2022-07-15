@@ -2,6 +2,33 @@
 
 import { exit } from "process";
 
+export enum WeekdayEnum {
+	Sun,
+	Mon,
+	Tue,
+	Wed,
+	Thu,
+	Fri,
+	Sat,
+	length,
+}
+
+export enum MonthEnum {
+	Jan,
+	Feb,
+	Mar,
+	Apr,
+	May,
+	Jun,
+	Jul,
+	Aug,
+	Sep,
+	Oct,
+	Nov,
+	Dec,
+	length,
+}
+
 export const isPrime = (k: number): boolean => {
     if (k <= 1) {
         return false;
@@ -74,3 +101,34 @@ export const number_to_english = (number: number): string => {
 	console.assert(false, 'unexpected number');
     exit(1);
 };
+
+export const is_leap_year = (year: number): boolean => {
+    let four = year % 4 == 0;
+    let hundred = year % 100 == 0;
+    let four_hundred = year % 400 == 0;
+    if (!four) {
+        return false;
+    }
+    if (hundred && !four_hundred) {
+        return false;
+    }
+    return true;
+}
+
+export const month_length = (month: number, leap_year: boolean): number => {
+    switch (month) {
+			case MonthEnum.Jan: return 31;
+			case MonthEnum.Feb: return leap_year ? 29 : 28;
+      case MonthEnum.Mar: return 31;
+      case MonthEnum.Apr: return 30;
+      case MonthEnum.May: return 31;
+      case MonthEnum.Jun: return 30;
+      case MonthEnum.Jul: return 31;
+      case MonthEnum.Aug: return 31;
+      case MonthEnum.Sep: return 30;
+      case MonthEnum.Oct: return 31;
+      case MonthEnum.Nov: return 30;
+			case MonthEnum.May: return 31;
+			default: return -1;
+    }
+}
