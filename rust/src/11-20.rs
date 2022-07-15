@@ -283,6 +283,5 @@ pub fn number_letter_counts() -> (&'static str, i128) {
       .len();
   }
 
-
   ("17# number letter counts", result as i128)
 }

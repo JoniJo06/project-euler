@@ -28,71 +28,59 @@ pub fn is_prime(k: u64) -> bool {
 }
 
 pub fn number_to_english(number: usize) -> String {
-	let ones: Vec<&str> = vec![
-		"zero",
-		"one",
-		"two",
-		"three",
-		"four",
-		"five",
-		"six",
-		"seven",
-		"eight",
-		"nine",
-		"ten",
-		"eleven",
-		"twelve",
-		"thirteen",
-		"fourteen",
-		"fifteen",
-		"sixteen",
-		"seventeen",
-		"eighteen",
-		"nineteen",
-	];
+  let ones: Vec<&str> = vec![
+    "zero",
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+    "ten",
+    "eleven",
+    "twelve",
+    "thirteen",
+    "fourteen",
+    "fifteen",
+    "sixteen",
+    "seventeen",
+    "eighteen",
+    "nineteen",
+  ];
 
-  
-	let tens: Vec<&str> = vec![
-    "twenty", 
-    "thirty", 
-    "forty", 
-    "fifty", 
-    "sixty", 
-    "seventy", 
-    "eighty", 
-    "ninety"
-    ];
+  let tens: Vec<&str> = vec![
+    "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety",
+  ];
 
-	if number <= 19 {
+  if number <= 19 {
     return ones[number].to_string();
-  } 
+  }
 
-  // let a: usize = 10;
-  // let b: usize = 3;
-
-  // println!("{}", a / b);
-
-  
-	if (20..=90).contains(&number) && number % 10 == 0 {
+  if (20..=90).contains(&number) && number % 10 == 0 {
     return tens[number / 10 - 2].to_string();
   }
-  
-	if (21..=99).contains(&number) {
-    return format!("{}-{}",tens[number / 10 - 2], ones[number % 10]);
-  }
-  
-	if (100..=900).contains(&number) && number % 100 == 0 {
-    return format!("{} hundred",ones[number / 100]);
-  } 
-  
-	// if number >= 101 && number <= 999 {
-	if (101..=999).contains(&number) {
-    return format!("{} hundred and {}", ones[number / 100], number_to_english(number % 100));
-  } 
-  
-	if number == 1000 {
-    return "one thousand".to_string();
 
+  if (21..=99).contains(&number) {
+    return format!("{}-{}", tens[number / 10 - 2], ones[number % 10]);
+  }
+
+  if (100..=900).contains(&number) && number % 100 == 0 {
+    return format!("{} hundred", ones[number / 100]);
+  }
+
+  if (101..=999).contains(&number) {
+    return format!(
+      "{} hundred and {}",
+      ones[number / 100],
+      number_to_english(number % 100)
+    );
+  }
+
+  if number == 1000 {
+    return "one thousand".to_string();
   }
 
   panic!("Invalid number: {}", number);
