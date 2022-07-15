@@ -1,9 +1,9 @@
 use crate::math;
 use num::BigUint;
 use std::cmp;
-use std::path::Path;
-use std::io::{BufReader, BufRead};
 use std::fs::File;
+use std::io::{BufRead, BufReader};
+use std::path::Path;
 
 fn get_item_from_grid(grid: &Vec<Vec<u32>>, row: i32, col: i32) -> u32 {
   if 0 <= row && row < grid.len() as i32 && 0 <= col && col < grid[row as usize].len() as i32 {
@@ -290,16 +290,16 @@ pub fn number_letter_counts() -> (&'static str, i128) {
   ("17# number letter counts", result as i128)
 }
 
-fn calc_path(triangle: &mut Vec<Vec<u64>>)-> u64 {
+fn calc_path(triangle: &mut Vec<Vec<u64>>) -> u64 {
   for row in (0..=(triangle.len() - 2)).rev() {
     for col in 0..=row {
       triangle[row][col] += cmp::max(triangle[row + 1][col], triangle[row + 1][col + 1]);
     }
   }
-	triangle[0][0]
+  triangle[0][0]
 }
 
-pub fn maximum_path_sum_1() -> (&'static str, i128){
+pub fn maximum_path_sum_1() -> (&'static str, i128) {
   let path = Path::new("./../inputs/18.txt");
   if !path.exists() {
     panic!("File does not exist");
@@ -314,15 +314,12 @@ pub fn maximum_path_sum_1() -> (&'static str, i128){
       line
         .unwrap()
         .split(' ')
-        .map(|x| {
-          x
-            .to_string()
-            .parse::<u64>()
-            .unwrap()
-        }).collect::<Vec<u64>>()
-    }).collect::<Vec<Vec<u64>>>();
-  
-	let result = calc_path(&mut triangle);
+        .map(|x| x.to_string().parse::<u64>().unwrap())
+        .collect::<Vec<u64>>()
+    })
+    .collect::<Vec<Vec<u64>>>();
 
-	("18# maximum path sum I", result as i128)
+  let result = calc_path(&mut triangle);
+
+  ("18# maximum path sum I", result as i128)
 }
