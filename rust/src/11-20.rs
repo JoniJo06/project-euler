@@ -347,6 +347,7 @@ pub fn factorial_digit_sum() -> (&'static str, i128) {
     .to_string()
     .chars()
     .map(|c| c.to_string().parse::<i64>().unwrap())
-    .reduce(|a, b| a + b).unwrap();
+    .reduce(|a, b| a + b)
+    .unwrap();
   ("20# factorial digit sum", result as i128)
 }
