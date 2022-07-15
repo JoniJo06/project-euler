@@ -1,5 +1,3 @@
-use std::borrow::Borrow;
-
 pub fn is_prime(k: u64) -> bool {
   if k <= 1 {
     return false;
@@ -75,19 +73,20 @@ pub fn number_to_english(number: usize) -> String {
   // println!("{}", a / b);
 
   
-	if number >= 20 && number <= 90 && number % 10 == 0 {
+	if (20..=90).contains(&number) && number % 10 == 0 {
     return tens[number / 10 - 2].to_string();
   }
   
-	if number >= 21 && number <= 99 {
+	if (21..=99).contains(&number) {
     return format!("{}-{}",tens[number / 10 - 2], ones[number % 10]);
   }
   
-	if number >= 100 && number <= 900 && number % 100 == 0 {
+	if (100..=900).contains(&number) && number % 100 == 0 {
     return format!("{} hundred",ones[number / 100]);
   } 
   
-	if number >= 101 && number <= 999 {
+	// if number >= 101 && number <= 999 {
+	if (101..=999).contains(&number) {
     return format!("{} hundred and {}", ones[number / 100], number_to_english(number % 100));
   } 
   

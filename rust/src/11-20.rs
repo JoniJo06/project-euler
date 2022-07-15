@@ -278,8 +278,8 @@ pub fn number_letter_counts() -> (&'static str, i128) {
 
   for i in 0..1000 {
     result += math::number_to_english(i + 1)
-      .replace(" ", "")
-      .replace("-", "")
+      .replace(' ', "")
+      .replace('-', "")
       .len();
   }
 
