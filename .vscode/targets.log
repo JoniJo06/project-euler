@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jul 14 22:02:59 2022
+# Make data base, printed on Fri Jul 15 10:43:08 2022
 
 # Variables
 
@@ -47,7 +49,7 @@ VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:77043
+JOURNAL_STREAM = 8:76028
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # environment
@@ -69,7 +71,7 @@ XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/d
 # environment
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
-MANAGERPID = 2060
+MANAGERPID = 1986
 # environment
 LC_NAME = de_DE.UTF-8
 # environment
@@ -85,7 +87,7 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-SESSION_MANAGER = local/jonijo06-MS-7C56:@/tmp/.ICE-unix/2287,unix/jonijo06-MS-7C56:/tmp/.ICE-unix/2287
+SESSION_MANAGER = local/jonijo06-MS-7C56:@/tmp/.ICE-unix/2248,unix/jonijo06-MS-7C56:/tmp/.ICE-unix/2248
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -103,7 +105,7 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 31231947430d4484b05f448b03532eba
+INVOCATION_ID = 7770c953bdf3453c9c79f41ae7358bbc
 # environment
 GDK_PIXBUF_MODULEDIR = /snap/code/101/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
@@ -127,7 +129,7 @@ PWD = /home/jonijo06/programming/jonijo06/project-euler
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2253
+SSH_AGENT_PID = 2213
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -144,6 +146,7 @@ VSCODE_CLI = 1
 VSCODE_CODE_CACHE_PATH = /home/jonijo06/.config/Code/CachedData/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a
 # environment
 LOGNAME = jonijo06
+ 
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
@@ -203,7 +206,7 @@ LC_TELEPHONE = de_DE.UTF-8
 # default
 MAKE_COMMAND := make
 # environment
-OLDPWD = /home/jonijo06/programming/jonijo06
+OLDPWD = /home/jonijo06
 # default
 .VARIABLES := 
 # automatic
@@ -223,8 +226,6 @@ GDK_BACKEND = x11
 # environment
 LC_PAPER = de_DE.UTF-8
 # environment
-NO_AT_BRIDGE = 1
-# environment
 QT_ACCESSIBILITY = 1
 # default
 MAKEFILES := 
@@ -243,11 +244,11 @@ PAGER = less
 # environment
 LC_ALL = C
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/124539ba_3214_44de_8fcf_d3640363e3bc
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/2ff7a3f4_4947_4da2_9294_696e8b66739e
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.7170
+GNOME_TERMINAL_SERVICE = :1.109
 # default
 SUFFIXES := 
 # environment
@@ -271,9 +272,9 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 41941
+VSCODE_PID = 4655
 # variable set hash-table stats:
-# Load=131/1024=13%, Rehash=0, Collisions=19/153=12%
+# Load=130/1024=13%, Rehash=0, Collisions=19/152=12%
 
 # Pattern-specific Variable Values
 
@@ -290,9 +291,6 @@ VSCODE_PID = 41941
 # No implicit rules.
 
 # Files
- 
-make: *** No rule to make target 'all'.  Stop.
-
 
 # Not a target:
 all:
@@ -342,6 +340,6 @@ GNUmakefile:
 # strcache performance: lookups = 22 / hit rate = 13%
 # hash-table stats:
 # Load=19/8192=0%, Rehash=0, Collisions=1/22=5%
-# Finished Make data base on Thu Jul 14 22:03:03 2022
+# Finished Make data base on Fri Jul 15 10:43:08 2022
 
  
