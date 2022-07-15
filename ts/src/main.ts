@@ -30,8 +30,11 @@ import {
 	factorial_digit_sum,
 } from './11-20';
 
-import { maximum_path_sum_II } from './61-70';
-import { amicable_numbers, names_scores } from './21-30';
+import {
+	amicable_numbers,
+	names_scores,
+	non_abundant_sums
+} from './21-30';
 
 const DEBUG = false;
 const SOLVED = true;
@@ -92,6 +95,7 @@ const main = () => {
 		// 21-30
 		amicable_numbers,
 		names_scores,
+		non_abundant_sums,
 		// 61-70
 		// maximum_path_sum_II,
 	];
