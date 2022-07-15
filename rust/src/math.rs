@@ -1,3 +1,7 @@
+use num::BigUint;
+use num::FromPrimitive;
+use num::ToPrimitive;
+
 pub fn is_prime(k: u64) -> bool {
   if k <= 1 {
     return false;
@@ -84,4 +88,22 @@ pub fn number_to_english(number: usize) -> String {
   }
 
   panic!("Invalid number: {}", number);
+}
+
+pub trait MyBigUint {
+  fn fac(&mut self);
+}
+
+impl MyBigUint for BigUint {
+  fn fac(&mut self) {
+    let mut fac = BigUint::from_i32(1).unwrap();
+
+    let n = self.to_i32().unwrap();
+    for num in (1..=n).rev() {
+      // println!("{}")
+      fac *= BigUint::from_i32(num).unwrap();
+    }
+
+    *self = fac;
+  }
 }
