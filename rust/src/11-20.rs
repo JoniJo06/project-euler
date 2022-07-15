@@ -1,3 +1,4 @@
+use crate::math;
 use num::BigUint;
 
 fn get_item_from_grid(grid: &Vec<Vec<u32>>, row: i32, col: i32) -> u32 {
@@ -270,4 +271,18 @@ pub fn power_digit_sum() -> (&'static str, i128) {
     .for_each(|x| result += x.to_string().parse::<u32>().unwrap());
 
   ("16# power digit sum", result as i128)
+}
+
+pub fn number_letter_counts() -> (&'static str, i128) {
+  let mut result = 0;
+
+  for i in 0..1000 {
+    result += math::number_to_english(i + 1)
+      .replace(" ", "")
+      .replace("-", "")
+      .len();
+  }
+
+
+  ("17# number letter counts", result as i128)
 }

@@ -95,6 +95,7 @@ fn main() {
     _11_20::longest_collatz_sequence,
     _11_20::lattice_paths,
     _11_20::power_digit_sum,
+    _11_20::number_letter_counts,
   ];
 
   let problem = args[1].parse::<usize>().expect("you must provide a number");
@@ -103,6 +104,7 @@ fn main() {
     eprintln!("try to access problem {} of {}!", problem, problems.len());
     exit(1);
   }
+
   let (name, result) = problems[problem - 1]();
   println!("{}", name);
   println!("Result {}", result);
