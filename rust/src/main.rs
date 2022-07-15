@@ -97,6 +97,7 @@ fn main() {
     _11_20::power_digit_sum,
     _11_20::number_letter_counts,
     _11_20::maximum_path_sum_1,
+    _11_20::counting_sundays,
   ];
 
   let problem = args[1].parse::<usize>().expect("you must provide a number");

@@ -4,6 +4,7 @@ use std::cmp;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 use std::path::Path;
+use chrono::{Utc, TimeZone, Datelike, Weekday};
 
 fn get_item_from_grid(grid: &Vec<Vec<u32>>, row: i32, col: i32) -> u32 {
   if 0 <= row && row < grid.len() as i32 && 0 <= col && col < grid[row as usize].len() as i32 {
@@ -323,3 +324,19 @@ pub fn maximum_path_sum_1() -> (&'static str, i128) {
 
   ("18# maximum path sum I", result as i128)
 }
+
+pub fn counting_sundays() -> (&'static str, i128) {
+  let mut result = 0;
+
+  for year in 1901..=2000 {
+    for month in 1..=12 {
+      let day = Utc.ymd(year, month, 1).weekday();
+      if day == Weekday::Sun {
+        result += 1;
+      }
+    }
+  }
+
+  ("19# counting sundays", result)
+}
+
