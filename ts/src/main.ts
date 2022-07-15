@@ -31,6 +31,7 @@ import {
 } from './11-20';
 
 import { maximum_path_sum_II } from './61-70';
+import { amicable_numbers } from './21-30';
 
 const DEBUG = false;
 const SOLVED = true;
@@ -88,6 +89,8 @@ const main = () => {
 		maximum_path_sum_I,
 		counting_sundays,
 		factorial_digit_sum,
+		// 21-30
+		amicable_numbers,
 		// 61-70
 		// maximum_path_sum_II,
 	];

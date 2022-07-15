@@ -120,6 +120,29 @@ export const is_leap_year = (year: number): boolean => {
     return true;
 }
 
+export const get_all_divisors = (n: number): number[] => {
+	const divisors: number[] = [0];
+
+	for (let i = 1; i < n; i++) {
+		if (n % i === 0) {
+			divisors.push(i);
+		}
+	}
+
+	return divisors;
+}
+
+export const is_amicable_number = (n: number): boolean => {
+	const divisors_n1: number[] = get_all_divisors(n);
+	const divisors_n1_sum: number = divisors_n1.reduce((a, b) => a + b);
+	if (divisors_n1_sum === n) return false;
+	const divisors_n2: number[] = get_all_divisors(divisors_n1_sum);
+	const divisors_n2_sum: number = divisors_n2.reduce((a, b) => a + b);
+	
+	if (divisors_n2_sum === n) return true;
+	return false;
+}
+
 export const month_length = (month: number, leap_year: boolean): number => {
     switch (month) {
 			case MonthEnum.Jan: return 31;
