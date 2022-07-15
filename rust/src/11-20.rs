@@ -1,10 +1,10 @@
 use crate::math;
+use chrono::{Datelike, TimeZone, Utc, Weekday};
 use num::BigUint;
 use std::cmp;
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 use std::path::Path;
-use chrono::{Utc, TimeZone, Datelike, Weekday};
 
 fn get_item_from_grid(grid: &Vec<Vec<u32>>, row: i32, col: i32) -> u32 {
   if 0 <= row && row < grid.len() as i32 && 0 <= col && col < grid[row as usize].len() as i32 {
@@ -339,4 +339,3 @@ pub fn counting_sundays() -> (&'static str, i128) {
 
   ("19# counting sundays", result)
 }
-
