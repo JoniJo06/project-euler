@@ -102,6 +102,11 @@ export const number_to_english = (number: number): string => {
     exit(1);
 };
 
+export const factorial = (n: bigint): bigint => {
+	if (n <= 1n) return 1n;
+	return n * factorial(n - 1n);
+}
+
 export const is_leap_year = (year: number): boolean => {
     let four = year % 4 == 0;
     let hundred = year % 100 == 0;

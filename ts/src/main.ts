@@ -27,6 +27,7 @@ import {
 	number_letter_counts,
 	maximum_path_sum_I,
 	counting_sundays,
+	factorial_digit_sum,
 } from './11-20';
 
 import { maximum_path_sum_II } from './61-70';
@@ -86,6 +87,7 @@ const main = () => {
 		number_letter_counts,
 		maximum_path_sum_I,
 		counting_sundays,
+		factorial_digit_sum,
 		// 61-70
 		// maximum_path_sum_II,
 	];

@@ -1,8 +1,8 @@
 /** @format */
 
-import fs from 'fs-extra'
+import fs from 'fs-extra';
 
-import { WeekdayEnum, MonthEnum } from './math'; 
+import { WeekdayEnum, MonthEnum } from './math';
 import * as math from './math';
 
 const get_item_from_grid = (grid: number[][], row: number, col: number): number => {
@@ -237,7 +237,8 @@ export const number_letter_counts = (): [string, number] => {
 	let result: number = 0;
 
 	for (let i = 0; i < 1000; i++)
-		result += math.number_to_english(i + 1)
+		result += math
+			.number_to_english(i + 1)
 			.replace(/ /g, '')
 			.replace('-', '').length;
 
@@ -245,19 +246,18 @@ export const number_letter_counts = (): [string, number] => {
 };
 
 const calcPath = (triangle: number[][]): number => {
-	for (let row = triangle.length - 2; row >= 0; row--){
+	for (let row = triangle.length - 2; row >= 0; row--) {
 		for (let col = 0; col <= row; col++) {
 			triangle[row][col] += Math.max(triangle[row + 1][col], triangle[row + 1][col + 1]);
 		}
 	}
 	return triangle[0][0];
-}
+};
 
 export const maximum_path_sum_I = (): [string, number] => {
 	let result: number = 0;
-	
-  
-  const input: string = fs.readFileSync('./../inputs/18.txt', 'utf8');
+
+	const input: string = fs.readFileSync('./../inputs/18.txt', 'utf8');
 	const triangle: number[][] = input.split('\n').map((x) => x.split(' ').map(Number));
 
 	result = calcPath(triangle);
@@ -270,10 +270,21 @@ export const counting_sundays = (): [string, number] => {
 
 	for (let year = 1901; year < 2001; year++) {
 		for (let month = 0; month < MonthEnum.length; month++) {
-			let day = new Date(MonthEnum[month] + " 2, " + year);
-			if (day.getDay() === WeekdayEnum.Sun)
-				result++;
+			let day = new Date(MonthEnum[month] + ' 2, ' + year);
+			if (day.getDay() === WeekdayEnum.Sun) result++;
 		}
 	}
 	return ['19# counting sundays', result];
-}
+};
+
+export const factorial_digit_sum = (): [string, number] => {
+	let fac: bigint = math.factorial(100n);
+
+	let result: number = fac
+		.toString()
+		.split('')
+		.map(Number)
+		.reduce((a, b) => a + b);
+
+	return ['20# factorial digit sum', result];
+};
