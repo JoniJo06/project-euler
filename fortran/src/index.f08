@@ -3,7 +3,7 @@ module index
    implicit none
    type :: tuple
       character(len=:), allocatable :: name
-      integer(kind=int64), allocatable :: result
+      integer(kind=int64) :: result
    end type tuple
 
 contains

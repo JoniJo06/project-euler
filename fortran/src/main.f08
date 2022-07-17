@@ -29,6 +29,8 @@ program main
    select case (problem)
     case (1)
       result = multiples_of_3_or_5()
+    case (2)
+      result = even_fibonacci_numbers()
     case default
       print '("Unknown problem number: ", i0)', problem
       stop
