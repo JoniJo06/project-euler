@@ -31,6 +31,8 @@ program main
       result = multiples_of_3_or_5()
     case (2)
       result = even_fibonacci_numbers()
+    case (3)
+      result = largest_prime_factor()
     case default
       print '("Unknown problem number: ", i0)', problem
       stop

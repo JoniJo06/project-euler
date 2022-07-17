@@ -1,6 +1,6 @@
 module p1_10
    use index
-   use iso_fortran_env, only: int64
+   use iso_fortran_env, only: int64, real128, int8
    implicit none
 contains
    function multiples_of_3_or_5() result(ret)
@@ -41,4 +41,26 @@ contains
       ret%result = result
 
    end function even_fibonacci_numbers
+
+   function largest_prime_factor() result(ret)
+      implicit none
+      type(tuple) :: ret
+      integer(kind=int64) :: result = 0
+      integer(kind=8) :: root_number = 600851475143_8
+      integer(kind=8) :: i
+
+      do while (mod(root_number, 2_8).eq.0)
+         root_number = root_number / 2_8
+      end do
+
+      do i=3, int(sqrt(real(root_number)))
+         do while (mod(root_number, i).eq.0)
+            result = i
+            root_number = root_number / i
+         end do
+      end do
+
+      ret%name = "largest prime factor"
+      ret%result = result
+   end function largest_prime_factor
 end module p1_10

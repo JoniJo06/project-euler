@@ -1,4 +1,4 @@
-FCFLAGS=
+FCFLAGS=-pedantic -Wall -Wextra
 LIBS=
 FC=gfortran
 
