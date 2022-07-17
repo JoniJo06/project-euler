@@ -2,3 +2,6 @@ rust/target/
 test.*
 solution
 c/project-euler
+fortran/project-euler
+fortran/mod/
+fortran/*.mod

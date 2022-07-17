@@ -1,3 +1,8 @@
 {
-	"makefile.extensionOutputFolder": "./.vscode"
+	"makefile.extensionOutputFolder": "./.vscode",
+	"C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools",
+	"fortran.linter.includePaths": ["${WorkspaceFolder}/fortran/src"],
+	"fortran.linter.compiler": "gfortran",
+	"fortran.linter.modOutput": "${workspaceFolder}/fortran/mod",
+	"indentRainbow.excludedLanguages": ["f08", "fortran"]
 }

@@ -1,0 +1,11 @@
+module string
+contains
+   elemental subroutine str2int(str,int,stat)
+      implicit none
+      character(len=*),intent(in) :: str
+      integer,intent(out)         :: int
+      integer,intent(out)         :: stat
+
+      read(str,*,iostat=stat)  int
+   end subroutine str2int
+end module string
