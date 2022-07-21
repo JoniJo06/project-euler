@@ -1,6 +1,7 @@
 module p1_10
    use index
-   use iso_fortran_env, only: int64, real128, int8
+   use string
+   use iso_fortran_env, only: int64, int8
    implicit none
 contains
    function multiples_of_3_or_5() result(ret)
@@ -15,7 +16,7 @@ contains
          end if
       end do
 
-      ret%name = "multiples of 3 or 5"
+      ret%name = "1# multiples of 3 or 5"
       ret%result = result
 
    end function multiples_of_3_or_5
@@ -37,7 +38,7 @@ contains
          b = temp
       end do
 
-      ret%name = "even fibonacci numbers"
+      ret%name = "2# even fibonacci numbers"
       ret%result = result
 
    end function even_fibonacci_numbers
@@ -60,7 +61,33 @@ contains
          end do
       end do
 
-      ret%name = "largest prime factor"
+      ret%name = "3# largest prime factor"
       ret%result = result
    end function largest_prime_factor
+
+   function largest_palindrome_product() result(ret)
+      implicit none
+      type(tuple) :: ret
+      integer(kind=int64) :: result = 0
+      integer :: i
+      integer :: j
+      integer :: product
+      character(len=10) :: product_string
+      integer :: reverse_product
+      integer :: str2int_stat
+
+      do i = 100, 999
+         do j = 100, 999
+            product = i * j
+            write(product_string, "(i0)") product
+            call str2int(reverse(product_string), reverse_product, str2int_stat)
+            if (reverse_product == product .and. product > result) then
+               result = product
+            end if
+         end do
+      end do
+
+      ret%name = "4# largest palindrome product"
+      ret%result = result
+   end function largest_palindrome_product
 end module p1_10

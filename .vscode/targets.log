@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Jul 17 16:12:52 2022
+# Make data base, printed on Thu Jul 21 19:00:13 2022
 
 # Variables
 
@@ -45,11 +43,11 @@ CURDIR := /home/jonijo06/programming/jonijo06/project-euler
 # makefile
 SHELL = /bin/sh
 # environment
-SNAP_DATA = /var/snap/code/101
+SNAP_DATA = /var/snap/code/102
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:70139
+JOURNAL_STREAM = 8:73369
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # environment
@@ -71,35 +69,37 @@ XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/d
 # environment
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
-_ = /snap/code/101/usr/share/code/code
+_ = /snap/code/102/usr/share/code/code
 # environment
-MANAGERPID = 1980
+MANAGERPID = 3801
 # environment
 LC_NAME = de_DE.UTF-8
 # environment
 VSCODE_CWD = /home/jonijo06
 # environment
-GSETTINGS_SCHEMA_DIR = /snap/code/101/usr/share/glib-2.0/schemas
+GSETTINGS_SCHEMA_DIR = /snap/code/102/usr/share/glib-2.0/schemas
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/jonijo06/programming/handmade/misc:/home/jonijo06/vulkan/1.3.211.0/x86_64/bin:/home/jonijo06/programming/handmade/misc:/home/jonijo06/.cargo/bin:/home/jonijo06/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/jonijo06/programming/handmade/misc:/home/jonijo06/vulkan/1.3.211.0/x86_64/bin:/home/jonijo06/programming/handmade/misc:/home/jonijo06/.cargo/bin:/home/jonijo06/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin:/home/jonijo06/go/bin
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-SESSION_MANAGER = local/jonijo06-MS-7C56:@/tmp/.ICE-unix/2200,unix/jonijo06-MS-7C56:/tmp/.ICE-unix/2200
+SESSION_MANAGER = local/jonijo06-MS-7C56:@/tmp/.ICE-unix/4034,unix/jonijo06-MS-7C56:/tmp/.ICE-unix/4034
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
 GDK_PIXBUF_MODULE_FILE = /home/jonijo06/snap/code/common/.cache/gdk-pixbuf-loaders.cache
 # environment
-SNAP = /snap/code/101
+SNAP = /snap/code/102
 # environment
 VK_ADD_LAYER_PATH = /home/jonijo06/vulkan/1.3.211.0/x86_64/etc/vulkan/explicit_layer.d
 # environment
-SNAP_VERSION = b06ae3b2
+GOPATH = /home/jonijo06/go
+# environment
+SNAP_VERSION = 3b889b09
 # environment
 XDG_MENU_PREFIX = gnome-
 # environment
@@ -107,9 +107,9 @@ DISABLE_WAYLAND = 1
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = d439ccb4c0f945e28dff196646b15e18
+INVOCATION_ID = 46084e82ffa54bffa21a8dc2e0507164
 # environment
-GDK_PIXBUF_MODULEDIR = /snap/code/101/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
+GDK_PIXBUF_MODULEDIR = /snap/code/102/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -121,7 +121,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 17895
+GIO_LAUNCHED_DESKTOP_FILE_PID = 9611
 # automatic
 %F = $(notdir $%)
 # environment
@@ -133,7 +133,7 @@ PWD = /home/jonijo06/programming/jonijo06/project-euler
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2166
+SSH_AGENT_PID = 3995
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -147,11 +147,11 @@ LD_LIBRARY_PATH = /home/jonijo06/vulkan/1.3.211.0/x86_64/lib
 # environment
 VSCODE_CLI = 1
 # environment
-VSCODE_CODE_CACHE_PATH = /home/jonijo06/.config/Code/CachedData/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a
+VSCODE_CODE_CACHE_PATH = /home/jonijo06/.config/Code/CachedData/3b889b090b5ad5793f524b5d1d39fda662b96a2a
 # environment
 LOGNAME = jonijo06
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # environment
@@ -179,7 +179,7 @@ MAKECMDGOALS := all
 # environment
 QT_IM_MODULE = ibus
 # environment
-SNAP_USER_DATA = /home/jonijo06/snap/code/101
+SNAP_USER_DATA = /home/jonijo06/snap/code/102
 # environment
 SHLVL = 0
 # environment
@@ -189,7 +189,7 @@ MAKE_VERSION := 4.2.1
 # environment
 USER = jonijo06
 # environment
-SNAP_REVISION = 101
+SNAP_REVISION = 102
 # environment
 LC_MONETARY = de_DE.UTF-8
 # makefile
@@ -213,7 +213,7 @@ OLDPWD = /home/jonijo06
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-aefb25f9-1.69.1-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-aefb25f9-1.69.2-main.sock
 # environment
 BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
 # makefile
@@ -273,9 +273,9 @@ LC_ADDRESS = de_DE.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 17942
+VSCODE_PID = 9663
 # variable set hash-table stats:
-# Load=131/1024=13%, Rehash=0, Collisions=23/153=15%
+# Load=132/1024=13%, Rehash=0, Collisions=23/154=15%
 
 # Pattern-specific Variable Values
 
@@ -284,9 +284,11 @@ VSCODE_PID = 17942
 # Directories
 
 # . (device 2050, inode 49283370): 12 files, no impossibilities.
+ 
+make: *** No rule to make target 'all'.  Stop.
+
 
 # 12 files, no impossibilities in 1 directories.
- 
 
 # Implicit Rules
 
@@ -342,6 +344,6 @@ GNUmakefile:
 # strcache performance: lookups = 23 / hit rate = 13%
 # hash-table stats:
 # Load=20/8192=0%, Rehash=0, Collisions=1/23=4%
-# Finished Make data base on Sun Jul 17 16:12:52 2022
+# Finished Make data base on Thu Jul 21 19:00:13 2022
 
  

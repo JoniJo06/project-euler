@@ -17,7 +17,7 @@ program main
    call get_command_argument(0, program)
    if ( argc < 1 ) then
       print '("Usage: ", g0, " <problem-number>")', trim(program)
-      stop
+      call exit(1)
    end if
    call get_command_argument(1, arg)
    call str2int(arg, problem, stat)
@@ -33,9 +33,11 @@ program main
       result = even_fibonacci_numbers()
     case (3)
       result = largest_prime_factor()
+    case (4)
+      result = largest_palindrome_product()
     case default
       print '("Unknown problem number: ", i0)', problem
-      stop
+      call exit(1)
    end select
 
    print '(a)', '----------------------------------------'
@@ -44,5 +46,6 @@ program main
    print '(a)', '----------------------------------------'
 
    call compare(problem, result%result)
+
 
 end program main
