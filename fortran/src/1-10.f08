@@ -90,4 +90,30 @@ contains
       ret%name = "4# largest palindrome product"
       ret%result = result
    end function largest_palindrome_product
+
+   function smallest_multiple() result(ret)
+      implicit none
+      type(tuple) :: ret
+      integer(kind=int64) :: result = 0
+      integer :: n = 20
+      logical :: dividable = .true.
+      integer :: i
+
+      do while (.true.)
+         dividable = .true.
+         do i = 1, 20
+            if(mod(n, i).ne.0) then
+               dividable = .false.
+            end if
+         end do
+         if (dividable) then
+            result = n
+            exit
+         end if
+         n = n + 20
+      end do
+
+      ret%name = "5# smallest multiple"
+      ret%result = result
+   end function smallest_multiple
 end module p1_10

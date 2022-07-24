@@ -35,6 +35,8 @@ program main
       result = largest_prime_factor()
     case (4)
       result = largest_palindrome_product()
+    case (5)
+      result = smallest_multiple()
     case default
       print '("Unknown problem number: ", i0)', problem
       call exit(1)
