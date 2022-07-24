@@ -1,9 +1,9 @@
+#include <gmp.h>
 #include <math.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <gmp.h>
 
 #include "main.h"
 #include "pe/pe_math.h"
@@ -220,12 +220,12 @@ void longest_collatz_sequence(retTuple *ret) {
       terms++;
     }
     if (terms > result.b)
-      result = (tuple){ i, terms };
+      result = (tuple){i, terms};
   }
 
   ret->result = (long)result.a;
 }
-void lattice_paths(retTuple *ret) { 
+void lattice_paths(retTuple *ret) {
   ret->name = "15# lattice paths";
 
   long result = 1;

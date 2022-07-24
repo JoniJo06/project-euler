@@ -1,6 +1,6 @@
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
 #include <string.h>
 
 #include "main.h"
@@ -41,25 +41,25 @@ void compare(int problem, long result) {
 }
 
 void (*problems[])(retTuple *ret) = {
-  // 1-10
-  multiples_of_3_or_5,
-  even_fibonacci_numbers,
-  largest_prime_factor,
-  largest_palindrome_product,
-  smallest_multiple,
-  sum_square_difference,
-  _10001st_prime,
-  largest_product_in_a_series,
-  special_pythagorean_triplet,
-  summation_of_primes,
-  // 11-20
-  largest_product_in_a_grid,
-  highly_divisible_triangular_number,
-  large_sum,
-  longest_collatz_sequence,
-  lattice_paths,
-  power_digit_sum,
-  };
+    // 1-10
+    multiples_of_3_or_5,
+    even_fibonacci_numbers,
+    largest_prime_factor,
+    largest_palindrome_product,
+    smallest_multiple,
+    sum_square_difference,
+    _10001st_prime,
+    largest_product_in_a_series,
+    special_pythagorean_triplet,
+    summation_of_primes,
+    // 11-20
+    largest_product_in_a_grid,
+    highly_divisible_triangular_number,
+    large_sum,
+    longest_collatz_sequence,
+    lattice_paths,
+    power_digit_sum,
+};
 
 int main(int argc, char **argv) {
   const char *program = argv[0];
@@ -78,9 +78,10 @@ int main(int argc, char **argv) {
     exit(EXIT_FAILURE);
   }
 
-  if ((unsigned long) problem > sizeof(problems)/sizeof(problems[0])) {
+  if ((unsigned long)problem > sizeof(problems) / sizeof(problems[0])) {
     fprintf(stderr, "problem out of range\n");
-    fprintf(stderr, "try to access problem %d of %ld\n", problem, sizeof(problems)/sizeof(problems[0]));
+    fprintf(stderr, "try to access problem %d of %ld\n", problem,
+            sizeof(problems) / sizeof(problems[0]));
     exit(EXIT_FAILURE);
   }
 

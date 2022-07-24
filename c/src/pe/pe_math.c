@@ -103,6 +103,6 @@ char *math_add_str(char *a, char *b) {
 
   return buffer;
 
-  // fprintf(stdout, "str a: %s\nstrlen(a): %d\n-----\nstr b: %s\nstrlen(b): %d\n", a_reverse, len_a,
-          // b_reverse, len_b);
+  // fprintf(stdout, "str a: %s\nstrlen(a): %d\n-----\nstr b: %s\nstrlen(b): %d\n", a_reverse,
+  // len_a, b_reverse, len_b);
 }
