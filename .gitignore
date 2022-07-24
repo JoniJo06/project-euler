@@ -5,3 +5,4 @@ c/project-euler
 fortran/project-euler
 fortran/mod/
 fortran/*.mod
+.vscode/*.log
