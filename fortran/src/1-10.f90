@@ -1,6 +1,7 @@
 module p1_10
    use index
    use string
+   use math, only: pow
    use iso_fortran_env, only: int64, int8
    implicit none
 contains
@@ -116,4 +117,27 @@ contains
       ret%name = "5# smallest multiple"
       ret%result = result
    end function smallest_multiple
+
+   function sum_square_difference() result(ret)
+      implicit none
+      type(tuple) :: ret
+      integer :: n = 100
+      integer :: sum_square = 0
+      integer :: square_sum = 0
+      integer :: i
+
+      do i = 1, n
+
+         sum_square = sum_square + pow(i)
+      end do
+
+      do i = 1, n
+         square_sum = square_sum + i
+      end do
+
+      square_sum = pow(square_sum)
+
+      ret%name = "6# sum square difference"
+      ret%result = square_sum - sum_square
+   end function sum_square_difference
 end module p1_10

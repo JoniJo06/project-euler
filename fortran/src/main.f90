@@ -37,6 +37,8 @@ program main
       result = largest_palindrome_product()
     case (5)
       result = smallest_multiple()
+    case (6)
+      result = sum_square_difference()
     case default
       print '("Unknown problem number: ", i0)', problem
       call exit(1)
